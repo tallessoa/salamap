@@ -1,0 +1,2474 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ff5d00">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Reservas">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+
+
+<style type="text/css">@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:700;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:700;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:700;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:700;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Cormorant Garamond';font-style:normal;font-weight:700;src:url(/cf-fonts/v/cormorant-garamond/5.2.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:400;src:url(/cf-fonts/v/source-sans-3/5.2.9/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:600;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Source Sans 3';font-style:normal;font-weight:700;src:url(/cf-fonts/v/source-sans-3/5.2.9/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}</style>
+<title>SALAMAP — Gestão Inteligente de Reservas</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f2f4f6;color:#202832;font:14px 'Source Sans 3',system-ui,Arial}
+header{
+  background:#1c1917;color:white;padding:14px 20px;
+  display:grid;grid-template-columns:1fr minmax(0,2.2fr) auto;
+  align-items:center;gap:16px;min-height:88px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+h1{font-size:20px;margin:0}
+.brand{
+  display:flex;flex-direction:row;align-items:center;gap:12px;
+  text-align:left;min-width:0;justify-self:start;
+}
+.logo{height:56px;width:auto;display:block;flex-shrink:0}
+.brand-text{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
+.brand-name{font-size:16px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#fff}
+.brand-name span,.brand-name .map{color:#fb923c}
+.brand-tag{font-size:11px;opacity:.75;color:#d6d3d1;line-height:1.25;max-width:160px}
+.header-center{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;min-width:0;padding:0 8px;
+}
+.restaurant-display{
+  margin:0;font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  font-size:clamp(28px, 3.2vw, 42px);font-weight:700;letter-spacing:0.01em;
+  color:#fff;line-height:1.15;max-width:100%;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.restaurant-display.is-empty{
+  font-size:clamp(18px, 2.2vw, 24px);font-weight:600;
+  color:rgba(255,255,255,.4);font-style:italic;letter-spacing:0.02em;
+}
+.header-tools{
+  position:relative;display:flex;gap:6px;align-items:center;justify-self:end;
+}
+.header-tools .actions{
+  display:none;flex-direction:column;gap:6px;margin:0;padding:10px;
+  position:absolute;right:0;top:calc(100% + 6px);
+  background:#292524;border:1px solid rgba(255,255,255,.15);border-radius:10px;
+  box-shadow:0 8px 24px #0005;min-width:170px;z-index:40;
+}
+.header-tools .actions.open{display:flex}
+.header-tools .actions button{
+  width:100%;text-align:left;background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)
+}
+.header-tools .actions button:hover{background:rgba(255,255,255,.16)}
+#menubtn,#editrestname{
+  background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)
+}
+@media(max-width:720px){
+  header{grid-template-columns:1fr auto;grid-template-rows:auto auto;padding:12px 14px;gap:10px}
+  .brand{grid-column:1;grid-row:1}
+  .header-tools{grid-column:2;grid-row:1}
+  .header-center{grid-column:1/-1;grid-row:2;padding:4px 0 2px}
+  .logo{height:48px}
+  .brand-tag{max-width:120px;font-size:10px}
+  .restaurant-display{white-space:normal;font-size:clamp(24px, 6vw, 34px)}
+  .restaurant-display.is-empty{font-size:16px}
+}
+main{max-width:1600px;margin:14px auto;padding:0 12px}
+.bar,.actions,.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+button,input,select,textarea{font:inherit}
+button{padding:7px 11px;border:1px solid #ccd3da;border-radius:7px;background:white;cursor:pointer}
+button.primary{background:#263746;color:white;border-color:#263746}
+button.occ-current{background:#c2410c;color:#fff;border-color:#c2410c;font-weight:700}
+.tbl.blocked{border-color:#78716c;background:#e7e5e4;opacity:.9}
+.badge.blocked{background:#d6d3d1;color:#44403c}
+dialog.ui-dlg{max-width:420px}
+dialog.ui-dlg .ui-msg{margin:8px 0 16px;line-height:1.5;color:#334155;white-space:pre-wrap}
+dialog.ui-dlg .ui-input{width:100%;padding:10px 12px;border:1px solid #ccd3da;border-radius:8px;margin-bottom:14px;font:inherit}
+dialog.ui-dlg .actions{justify-content:flex-end}
+button.walkin{background:#2d6a4f;color:white;border-color:#2d6a4f}
+button.editmap{background:#5c4d7a;color:white;border-color:#5c4d7a}
+button.danger{background:#fff;color:#a22;border-color:#e0a0a0}
+button.sm{padding:4px 8px;font-size:12px}
+button.zoom{min-width:32px;font-weight:600}
+input,select,textarea{padding:7px;border:1px solid #ccd3da;border-radius:7px;background:white}
+.split{display:flex;gap:0;align-items:stretch;min-height:480px}
+.split-left{flex:1 1 auto;min-width:180px;overflow:hidden}
+.split-right{flex:0 0 auto;min-width:200px;width:var(--right-w, 380px)}
+.split-handle{
+  width:8px;flex:0 0 8px;cursor:col-resize;background:transparent;
+  position:relative;z-index:5;touch-action:none;
+}
+.split-handle::after{
+  content:"";position:absolute;top:20%;bottom:20%;left:2px;width:4px;
+  border-radius:2px;background:#c5ced6;
+}
+.split-handle:hover::after,.split-handle.dragging::after{background:#415d75}
+.panel{background:white;border:1px solid #dce1e6;border-radius:10px;padding:12px;margin-bottom:12px;height:100%}
+.panel h2{font-size:15px;margin:0 0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tabs button.active{background:#263746;color:white}
+.floor-wrap{
+  position:relative;min-height:400px;height:min(62vh, 560px);
+  border:1px dashed #b9c2cc;border-radius:8px;background:#fafbfc;
+  overflow:auto;touch-action:none;
+}
+.floor{position:relative;width:100%;min-height:100%;height:100%;transform-origin:0 0}
+/* Tamanhos em % do floor — o zoom escala o floor inteiro (layout + mesas juntos) */
+.tbl{
+  position:absolute;border:2px solid #75ad87;background:#f1faf3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;
+  text-align:center;padding:2px 3px;user-select:none;font-size:10px;box-shadow:0 1px 3px #0001;
+  box-sizing:border-box;min-width:0;min-height:0;
+}
+.tbl.round{border-radius:50%}
+.tbl.square{border-radius:6px}
+.tbl.rect{border-radius:6px}
+.tbl.busy,.tbl.confirmed{border-color:#d1a13e;background:#fff8e8}
+.tbl.booked{border-color:#d1a13e;border-style:dashed;background:#fffdf2}
+.tbl.arrived{border-color:#3a86ff;background:#e8f1ff}
+.tbl.seated{border-color:#6a4c93;background:#f3eef8}
+.tbl.sel{outline:3px solid #415d75;z-index:5}
+.tbl.dragging{opacity:.85;z-index:20;box-shadow:0 8px 24px #0003;cursor:grabbing}
+.tbl b{font-size:11px;line-height:1.1}
+.tbl .info{font-size:9px;color:#59636d;line-height:1.15;margin-top:1px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tbl .badge{display:inline-block;font-size:8px;padding:1px 4px;border-radius:3px;margin-top:1px;font-weight:600}
+.badge.booked{background:#fff3c4;color:#7a5a00}
+.badge.confirmed{background:#ffe8a3;color:#7a5a00}
+.badge.arrived{background:#cce0ff;color:#1a4a9c}
+.badge.seated{background:#e0d4f0;color:#4a2d6e}
+
+.tbl.cancelled{border-color:#dc2626;background:#fef2f2}
+.badge.cancelled{background:#fecaca;color:#991b1b}
+.booking.cancelled{border-left:4px solid #dc2626;background:#fef2f2}
+.slot.cancelled{border-left:3px solid #dc2626;background:#fef2f2}
+.room-table-head{display:grid;grid-template-columns:1fr 70px 90px 32px;gap:6px;align-items:center;font-size:11px;font-weight:700;color:#64748b;padding:0 2px 4px}
+.shift-tabs button .pax{font-weight:700}
+
+.summary{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.stat{background:#f5f7f8;border:1px solid #dce1e6;border-radius:8px;padding:6px 11px;cursor:pointer;font:inherit;color:inherit;text-align:left}
+.stat:hover{background:#eef1f3;border-color:#b9c2cb}
+.stat b{display:block;font-size:17px}
+.list{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow:auto}
+.booking{display:grid;grid-template-columns:48px 1fr auto;gap:6px;border:1px solid #dce1e6;border-radius:8px;padding:7px;align-items:start}
+.booking.walkin{border-color:#95d5b2;background:#f0fff4}
+.booking.booked{border-left:4px dashed #d1a13e}
+.booking.confirmed{border-left:4px solid #d1a13e}
+.booking.arrived{border-left:4px solid #3a86ff}
+.booking.seated{border-left:4px solid #6a4c93}
+.booking small{display:block;color:#69737d;margin-top:2px;font-size:11px}
+.time{font-weight:bold;font-size:14px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:12px;color:#66717c}
+.field input,.field select,.field textarea{width:100%}
+.full{grid-column:1/-1}
+textarea{min-height:58px}
+.muted{color:#69737d;font-size:12px}
+.empty{padding:18px;text-align:center;color:#69737d}
+.legend{font-size:11px;color:#69737d;margin-top:8px;line-height:1.5}
+#tablechecks{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+#tablechecks label{display:flex;align-items:center;gap:4px;padding:4px 8px;border:1px solid #dce1e6;border-radius:6px;background:#f8fafb;cursor:pointer;font-size:12px;user-select:none}
+#tablechecks label:has(input:checked){background:#e8f0fe;border-color:#415d75}
+#tablechecks input{margin:0}
+.timeline{display:flex;flex-direction:column;gap:4px;max-height:220px;overflow:auto}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:6px;padding:5px 7px;border-radius:6px;background:#f8fafb;border:1px solid #e8ecf0;font-size:12px}
+.slot .t{font-weight:600;color:#415d75}
+.slot.booked{border-left:3px dotted #d1a13e}
+.slot.confirmed{border-left:3px solid #d1a13e}
+.slot.arrived{border-left:3px solid #3a86ff}
+.slot.seated{border-left:3px solid #6a4c93}
+.slot.walkin{background:#f0fff4}
+.status-btns{display:flex;gap:3px;flex-wrap:wrap;margin-top:3px}
+.status-btns button{font-size:10px;padding:2px 6px}
+.edit-hint{background:#f3eef8;border:1px solid #d4c4e8;border-radius:6px;padding:6px 10px;font-size:12px;margin-bottom:8px;display:none}
+.edit-hint.on{display:block}
+.zoombar{display:flex;align-items:center;gap:4px}
+.zoombar span{font-size:12px;color:#66717c;min-width:36px;text-align:center}
+dialog{border:0;border-radius:10px;width:min(640px,96vw);max-height:90vh;overflow:auto;box-shadow:0 10px 50px #0004;padding:16px}
+dialog::backdrop{background:#0008}
+.shapepicker{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+.shapepicker label{display:flex;align-items:center;gap:4px;padding:4px 8px;border:1px solid #dce1e6;border-radius:6px;cursor:pointer;font-size:12px}
+.shapepicker input{margin:0}
+.room-list{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.room-card{border:1px solid #dce1e6;border-radius:8px;padding:10px;background:#fafbfc}
+.room-card h3{margin:0 0 8px;font-size:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.room-tables{display:flex;flex-direction:column;gap:4px}
+.room-table-row{display:grid;grid-template-columns:1fr 70px 90px 32px;gap:6px;align-items:center}
+.room-table-row input,.room-table-row select{padding:5px;font-size:12px}
+.add-room-row{display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-top:12px;padding-top:12px;border-top:1px solid #e8ecf0}
+
+
+.status-tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.status-tabs button{padding:6px 10px;border-radius:8px;border:1px solid #ccd3da;background:#fff;cursor:pointer;font-size:12px;display:inline-flex;align-items:center;gap:4px}
+.status-tabs button.active{background:#263746;color:#fff;border-color:#263746}
+.status-tabs button .ic{font-size:14px;line-height:1}
+.site-footer{margin-top:24px;padding:28px 16px 24px;text-align:center;font-size:13px;color:#e2e8f0;background:#1c1917;border-top:none}
+.site-footer strong{color:#fb923c}
+.footer-logo{height:48px;width:auto;display:block;margin:0 auto 8px;object-fit:contain}
+.footer-brand{font-size:18px;font-weight:800;letter-spacing:0.04em;margin-bottom:4px}
+.footer-brand .sala{color:#fff}
+.footer-brand .map{color:#fb923c}
+.footer-credit{font-size:12px;color:#a8a29e}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;color:#c2410c;font-size:12px}
+.timer.stopped{color:#64748b;font-weight:600}
+.shift-editor-row{display:grid;grid-template-columns:1fr 90px 90px 70px 32px;gap:6px;align-items:center;margin-bottom:6px}
+.shift-editor-row input,.shift-editor-row select{padding:6px;font-size:13px;width:100%}
+.shift-editor-head{display:grid;grid-template-columns:1fr 90px 90px 70px 32px;gap:6px;font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px}
+.status-tabs{margin:8px 0 10px}
+
+.shift-tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.shift-tabs button{padding:6px 12px;border-radius:8px;border:1px solid #ccd3da;background:#fff;cursor:pointer;font-size:13px}
+.shift-tabs button.active{background:#c2410c;color:#fff;border-color:#c2410c}
+.shift-tabs button.active .muted,.shift-tabs button.active .pax{color:#fff!important;opacity:1;font-weight:700}
+.shift-tabs button .muted{color:#6b7280;opacity:1;font-size:11px}
+.hours-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;align-items:end}
+@media(max-width:480px){.hours-row{grid-template-columns:1fr}}
+@media(max-width:800px){
+  .split{flex-direction:column}
+  .split-handle{display:none}
+  .split-right{width:100%!important}
+}
+@media(max-width:480px){.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.booking{grid-template-columns:40px 1fr}.booking .actions{grid-column:2}}
+@media print{header,.bar,.tabs,.actions,.legend,.no-print,.edit-hint,.split-handle,.zoombar{display:none!important}body{background:white}.split{display:block}.panel{border:0}.floor-wrap{min-height:500px;height:auto;overflow:visible}}
+
+.tbl{container-type:size}
+.tbl.filled{justify-content:flex-start;align-items:stretch;padding:0;overflow:hidden;text-align:left}
+.tbl.multi{border-color:#44505c;background:#fff}
+.tn{display:flex;justify-content:space-between;gap:4px;padding:1px 5px;background:rgba(0,0,0,.08);font-size:clamp(9px,9cqw,12px);line-height:1.25;color:#1f2933;font-weight:800;flex:0 0 auto}
+.tn span{font-weight:600;opacity:.75}
+.tlab{white-space:nowrap}
+.tlab b{font-weight:800;font-size:1.08em;color:#1f2933}
+.tn .tnum,.room-table-row .tnum{display:inline}
+.tbl.round.filled .tn{justify-content:center;padding-top:9%}
+.tslots{flex:1;min-height:0;display:flex;flex-direction:column}
+.tslot{flex:1;min-height:0;padding:2px 5px;overflow:hidden;color:#111827;border-top:2px solid #fff;display:flex;flex-direction:column;justify-content:center;gap:1px}
+.tslot:first-child{border-top:0}
+.tslot.booked{background:#fff3c4}.tslot.confirmed{background:#ffe27a}.tslot.arrived{background:#bcd7ff}.tslot.seated{background:#dccbf2}.tslot.noshow{background:#ff0000;color:#fff}
+.tslot.is-late{box-shadow:inset 0 0 0 3px #dc2626}
+.ts-top{display:flex;align-items:baseline;gap:5px;line-height:1.1;font-weight:800;white-space:nowrap;overflow:hidden}
+.ts-time{font-size:clamp(11px,17cqw,24px)}
+.ts-pax{font-size:clamp(10px,13cqw,18px)}
+.ts-name{font-size:clamp(10px,13cqw,17px);font-weight:700;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ts-shift{font-size:clamp(8px,8cqw,10px);opacity:.75;text-transform:uppercase;letter-spacing:.03em;margin-left:auto}
+.tbl.multi .tn{font-size:clamp(8px,9cqw,12px);padding:1px 4px}
+.tbl.multi .tslot{padding:1px 4px;justify-content:center;align-items:center}
+.tbl.multi .ts-top{gap:4px;justify-content:center;white-space:nowrap}
+.tbl.multi .ts-time{font-size:clamp(9px,11cqw,15px)}
+.tbl.multi .ts-pax{font-size:clamp(9px,11cqw,15px)}
+.tbl.multi .ts-name{display:none}
+.tbl.multi .ts-shift{display:none}
+.tbl.multi .fl{font-size:.8em}
+.fl{font-style:normal;font-size:.85em}
+.tbl.noshow,.badge.noshow{border-color:#ff0000}
+.badge.noshow{background:#ff0000;color:#fff}
+.tbl.noshow{box-shadow:0 0 0 3px #ff0000 inset}
+.booking.noshow{border-left:4px solid #ff0000;background:#fff0f0}
+.slot.noshow{border-left:3px solid #ff0000;background:#fff0f0}
+.booking.late{border-color:#dc2626}
+.alert{font-size:11px;margin-top:3px;padding:2px 6px;border-radius:4px;font-weight:600}
+.alert.late{background:#fee2e2;color:#991b1b;animation:pl 1.6s infinite}
+.alert.over{background:#ffedd5;color:#9a3412}
+.alert.all{background:#fef3c7;color:#92400e}
+.alert.note{background:#eef2f7;color:#334155;font-weight:500}
+@keyframes pl{50%{opacity:.55}}
+.vip-chip{background:#fde68a;color:#78350f;border-radius:4px;padding:0 5px;font-size:11px;font-weight:700}
+.stat.warn b{color:#b91c1c}
+.capwarn{margin-top:6px;padding:6px 9px;border-radius:6px;background:#ffedd5;color:#9a3412;font-weight:600;font-size:12px}
+.capwarn[hidden],.searchres[hidden],.clientinfo[hidden],#histbox[hidden]{display:none}
+.clientbox{border:1px solid #e3e8ed;border-radius:8px;padding:8px;background:#fafbfc;display:flex;flex-direction:column;gap:6px}
+.clientbox .chk{display:flex;align-items:center;gap:6px;font-size:13px;color:#202832}
+.clientinfo{font-size:12px;color:#334155;background:#eef2f7;border-radius:6px;padding:4px 8px}
+#histbox{font-size:12px}#histbox div{padding:2px 0;border-bottom:1px solid #eef1f4}
+.searchbox{position:relative;flex:0 1 260px}
+.searchbox input{width:100%}
+.searchres{position:absolute;top:100%;left:0;width:min(420px,92vw);max-height:360px;overflow:auto;background:#fff;border:1px solid #ccd3da;border-radius:8px;box-shadow:0 8px 24px #0003;z-index:60;margin-top:4px}
+.searchres .sr-h{padding:6px 10px;font-size:11px;color:#69737d}
+.searchres button{display:block;width:100%;text-align:left;border:0;border-top:1px solid #eef1f4;border-radius:0;padding:7px 10px;background:#fff}
+.searchres button:hover{background:#f3f6f9}
+.booking.flash{animation:fl 2.5s}
+@keyframes fl{0%,60%{background:#fde68a}100%{}}
+@media print{.searchbox{display:none!important}}
+
+.status-btns button.on{color:#fff;font-weight:700;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.status-btns button.on[data-to=booked]{background:#a16207;border-color:#a16207}
+.status-btns button.on[data-to=confirmed]{background:#ca8a04;border-color:#ca8a04}
+.status-btns button.on[data-to=arrived]{background:#2563eb;border-color:#2563eb}
+.status-btns button.on[data-to=seated]{background:#7c3aed;border-color:#7c3aed}
+.status-btns button.on[data-to=left]{background:#475569;border-color:#475569}
+.status-btns button.on[data-to=noshow]{background:#b45309;border-color:#b45309}
+.status-btns button.on[data-to=cancelled]{background:#dc2626;border-color:#dc2626}
+body.role-user .admin-only{display:none!important}
+.userbox{display:flex;align-items:center;gap:6px;padding:4px 6px;font-size:13px}
+.userbox select{padding:4px 6px}
+.room-block-banner{background:#e7e5e4;color:#44403c;border:1px solid #a8a29e;border-radius:8px;padding:6px 10px;margin:6px 0;font-size:13px}
+.rb-list label{display:flex;gap:8px;align-items:center;padding:4px 0}
+.stat-list{display:flex;flex-direction:column;gap:4px;max-height:60vh;overflow:auto;margin:8px 0}
+.stat-list .row{display:grid;grid-template-columns:52px 1fr auto;gap:8px;align-items:center;padding:6px 8px;border:1px solid #e8ecf0;border-radius:6px;background:#fafbfc;font-size:13px}
+.stat-list .row b{font-weight:700}
+.netbar{display:none;padding:6px 12px;font-size:12px;text-align:center;background:#7f1d1d;color:#fff}
+body.offline .netbar{display:block}
+body.offline .netbar.restored{background:#14532d}
+</style>
+</head>
+<body>
+<div class="netbar" id="netbar"></div>
+<header>
+  <div class="brand">
+    <img src="logo-salamap.png" alt="SALAMAP" class="logo">
+  </div>
+  <div class="header-center">
+    <div id="restaurantdisplay" class="restaurant-display is-empty">Nome do restaurante</div>
+  </div>
+  <div class="header-tools">
+    <button type="button" id="menubtn">☰ Menu</button>
+    <div class="actions" id="headermenu">
+      <div class="userbox">👤 <select id="userrole"><option value="user">Usuário</option><option value="admin">Admin</option></select></div>
+      <button type="button" id="changepin" class="admin-only">Alterar PIN</button>
+      <button type="button" id="editrestname" class="admin-only">Nome Restaurante</button>
+      <button type="button" id="edithours" class="admin-only">Horários</button>
+      <button type="button" id="backup" class="admin-only">Exportar</button>
+      <button type="button" id="restore" class="admin-only">Importar</button>
+      <input hidden type="file" id="file" accept="application/json">
+    </div>
+  </div>
+</header>
+<main>
+  <div class="bar">
+    <button id="prev">‹</button>
+    <input type="date" id="day">
+    <button id="next">›</button>
+    <button id="today">Hoje</button>
+    <span id="dayname" class="muted"></span>
+    <div class="searchbox"><input type="search" id="search" placeholder="🔍 Nome ou telefone…" autocomplete="off"><div class="searchres" id="searchres" hidden></div></div>
+    <span style="flex:1"></span>
+    <button class="walkin" id="walkin">+ Walk-in</button>
+    <button class="primary" id="new">+ Nova reserva</button>
+  </div>
+  <div class="summary">
+    <button type="button" class="stat" id="statbook"><b id="nbook">0</b>Reservas</button>
+    <button type="button" class="stat" id="statcancel"><b id="ncancel">0</b>Canceladas</button>
+    <button type="button" class="stat warn" id="statlate"><b id="nlate">0</b>Atrasos</button>
+  </div>
+  <div class="shift-tabs" id="shifttabs">
+    <button type="button" data-shift="all" class="active">Todos</button>
+    <button type="button" data-shift="almoco">Almoço</button>
+    <button type="button" data-shift="jantar">Jantar</button>
+  </div>
+  <div class="split" id="split">
+    <div class="split-left">
+      <section class="panel">
+        <h2>
+          <span>Mapa de mesas</span>
+          <span style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <span class="zoombar">
+              <button class="sm zoom" id="zoomout" title="Diminuir mesas">−</button>
+              <span id="zoomlabel">100%</span>
+              <button class="sm zoom" id="zoomin" title="Aumentar mesas">+</button>
+            </span>
+            <button class="sm" id="blockroom">⛔ Bloquear sala</button>
+            <button class="sm admin-only" id="config">Salas e mesas</button>
+            <button class="editmap sm admin-only" id="toggledrag">✎ Editar mapa</button>
+            <button class="sm danger" id="canceledit" style="display:none">Cancelar alteração</button>
+          </span>
+        </h2>
+        <div class="edit-hint" id="edithint">Modo edição: arraste as mesas. Clique numa mesa para editar forma/capacidade. Use <b>Confirmar alteração</b> para gravar ou <b>Cancelar alteração</b> para repor.</div>
+        <div class="tabs" id="tabs"></div>
+        <div class="floor-wrap" id="floorwrap">
+          <div class="floor" id="floor"></div>
+        </div>
+        <div class="legend">
+          Verde = livre · Amarelo = confirmada · Azul = chegou · Roxo = sentado · Cinza = bloqueada · Mesa dividida = reservas de turnos diferentes<br>★ VIP · ❗ alergias · ⏰ atraso (+15 min) · ⚠ mais pessoas que lugares<br>
+          Arraste a barra entre mapa e lista para redimensionar os painéis.<br>
+          Use <b>− / +</b> para zoom no floor plan.
+        </div>
+      </section>
+    </div>
+    <div class="split-handle" id="splithandle" title="Arrastar para redimensionar"></div>
+    <div class="split-right" id="splitright">
+      <section class="panel">
+        <h2>Horário do dia</h2>
+        <div class="status-tabs" id="statustabs" title="Seleção múltipla: pode ativar vários estados">
+          <button type="button" data-status="booked" class="active" data-label="Efetuadas" title="Efetuadas"><span class="ic">✎</span> Efetuadas</button>
+          <button type="button" data-status="confirmed" class="active" data-label="Confirmadas" title="Confirmadas"><span class="ic">✓</span> Confirmadas</button>
+          <button type="button" data-status="arrived" class="active" data-label="Chegou" title="Chegou"><span class="ic">→</span> Chegou</button>
+          <button type="button" data-status="seated" class="active" data-label="Sentados" title="Sentados"><span class="ic">◉</span> Sentados</button>
+          <button type="button" data-status="left" class="active" data-label="Saiu" title="Saiu"><span class="ic">←</span> Saiu</button>
+          <button type="button" data-status="cancelled" class="active" data-label="Canceladas" title="Canceladas"><span class="ic">✕</span> Canceladas</button>
+          <button type="button" data-status="noshow" class="active" data-label="Não compareceu" title="Não compareceu"><span class="ic">⊘</span> Não compareceu</button>
+        </div>
+        <div class="timeline" id="timeline"></div>
+        <h2 style="margin-top:12px">Reservas do dia</h2>
+        <div class="list" id="list"></div>
+      </section>
+    </div>
+  </div>
+
+  </main>
+<footer class="site-footer">
+  <img src="logo-salamap.png" alt="SALAMAP" class="footer-logo">
+  <div class="footer-brand"><span class="sala">SALA</span><span class="map">MAP</span></div>
+  <div class="footer-credit">by Talles Azevedo Soalheiro — 2026</div>
+</footer>
+
+
+
+
+<dialog id="formdlg">
+<h2 id="formtitle">Nova reserva</h2>
+    <form id="form">
+      <input type="hidden" id="id">
+      <div class="formgrid">
+        <div class="field"><label>Nome *</label><input id="name" required></div>
+        <div class="field"><label>Telefone</label><input id="phone"></div>
+        <div class="field"><label>Número de pessoas *</label><input id="pax" type="number" min="1" required value="2"></div>
+        <div class="field" id="shiftfield"><label>Turno *</label>
+          <select id="shift" required>
+            <option value="almoco">Almoço</option>
+            <option value="jantar">Jantar</option>
+          </select>
+        </div>
+        <div class="field"><label>Horário *</label><input id="time" type="time" required value="20:00">
+          <span class="muted" id="timehint">Dentro do horário do turno</span>
+        </div>
+        <div class="field"><label>Estado</label>
+          <select id="status">
+            <option value="booked">Efetuada (por confirmar)</option>
+            <option value="confirmed">Confirmada</option>
+            <option value="arrived">Chegou</option>
+            <option value="seated">Sentado</option>
+            <option value="left">Saiu</option>
+            <option value="cancelled">Cancelada</option>
+            <option value="noshow">Não compareceu</option>
+          </select>
+        </div>
+        <div class="field"><label>Sala / área</label><select id="area"></select></div>
+        <div class="field full">
+          <label>Mesas (pode escolher várias)</label>
+          <div id="tablechecks"></div>
+          <div id="capwarn" class="capwarn" hidden></div>
+          <span class="muted">Marque as mesas ou clique nelas no mapa.</span>
+        </div>
+        <div class="field full"><label>Ficha do cliente</label>
+          <div class="clientbox">
+            <div id="clientinfo" class="clientinfo" hidden></div>
+            <label class="chk"><input type="checkbox" id="c_vip"> ★ Cliente VIP</label>
+            <input id="c_allergies" placeholder="Alergias / restrições (ex.: glúten, marisco)">
+            <textarea id="c_notes" placeholder="Notas do cliente (preferências, mesa favorita…)"></textarea>
+            <details id="histbox" hidden><summary id="histsum">Histórico</summary><div id="histlist"></div></details>
+          </div>
+        </div>
+        <div class="field full"><label>Menu escolhido</label><input id="menu" placeholder="Ex.: Menu de grupo 1 / à carta"></div>
+        <div class="field full"><label>Observações</label><textarea id="notes" placeholder="Alergias, bolo, crianças, sinal..."></textarea></div>
+      </div>
+      <div class="actions" style="margin-top:10px">
+        <button class="primary">Guardar reserva</button>
+        <button type="button" id="clear">Limpar</button>
+        <button type="button" id="cancel" style="display:none">Cancelar edição</button>
+        <button type="button" id="closeform">Fechar</button>
+      </div>
+    </form>
+</dialog>
+
+
+
+<dialog id="freetabledlg" class="ui-dlg">
+  <h2 id="freetitle">Mesa livre</h2>
+  <p class="ui-msg" id="freemsg">O que deseja fazer?</p>
+  <div class="actions" style="flex-wrap:wrap">
+    <button type="button" class="primary" id="free_reserve">Criar reserva</button>
+    <button type="button" class="walkin" id="free_walkin">Walk-in</button>
+    <button type="button" id="free_block">Bloquear mesa</button>
+    <button type="button" id="free_close">Fechar</button>
+  </div>
+</dialog>
+<dialog id="statdlg" class="ui-dlg">
+  <h2 id="sd_title">Lista</h2>
+  <div id="sd_body" class="stat-list"></div>
+  <div class="actions"><button type="button" id="sd_close">Fechar</button></div>
+</dialog>
+<dialog id="pindlg" class="ui-dlg">
+  <h2>Entrar como Admin</h2>
+  <p class="ui-msg">Introduza o PIN de 4 dígitos:</p>
+  <input id="pinin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" style="font-size:20px;letter-spacing:8px;width:120px;text-align:center">
+  <p id="pinerr" style="color:#dc2626;min-height:18px;margin:6px 0"></p>
+  <div class="actions">
+    <button type="button" class="primary" id="pinok">Entrar</button>
+    <button type="button" id="pincancel">Cancelar</button>
+  </div>
+  <p style="margin-top:10px"><a href="#" id="pinforgot">Esqueceu o PIN?</a></p>
+</dialog>
+<dialog id="newpindlg" class="ui-dlg">
+  <h2 id="np_title">Alterar PIN</h2>
+  <div id="np_oldwrap"><p class="ui-msg" id="np_oldlabel">PIN atual:</p>
+  <input id="np_old" type="password" inputmode="numeric" maxlength="4" autocomplete="off" style="font-size:18px;letter-spacing:6px;width:110px;text-align:center"></div>
+  <p class="ui-msg">Novo PIN (4 dígitos):</p>
+  <input id="np_new" type="password" inputmode="numeric" maxlength="4" autocomplete="off" style="font-size:18px;letter-spacing:6px;width:110px;text-align:center">
+  <p class="ui-msg">Repita o novo PIN:</p>
+  <input id="np_new2" type="password" inputmode="numeric" maxlength="4" autocomplete="off" style="font-size:18px;letter-spacing:6px;width:110px;text-align:center">
+  <p id="np_err" style="color:#dc2626;min-height:18px;margin:6px 0"></p>
+  <div class="actions">
+    <button type="button" class="primary" id="np_ok">Guardar PIN</button>
+    <button type="button" id="np_cancel">Cancelar</button>
+  </div>
+</dialog>
+<dialog id="roomblockdlg" class="ui-dlg">
+  <h2 id="rbtitle">Bloquear sala</h2>
+  <p class="muted" id="rbinfo"></p>
+  <div class="rb-list">
+    <label><input type="checkbox" id="rb_all"> <b>Dia todo</b></label>
+    <div id="rb_shifts"></div>
+  </div>
+  <div class="actions" style="margin-top:12px">
+    <button type="button" class="primary" id="rb_save">Guardar</button>
+    <button type="button" id="rb_clear">Desbloquear sala</button>
+    <button type="button" id="rb_close">Fechar</button>
+  </div>
+</dialog>
+<dialog id="blockeddlg" class="ui-dlg">
+  <h2 id="blockedtitle">Mesa bloqueada</h2>
+  <p class="ui-msg" id="blockedmsg">Esta mesa está bloqueada e não aceita reservas.</p>
+  <div class="actions" style="flex-wrap:wrap">
+    <button type="button" class="primary" id="blocked_unblock">Desbloquear</button>
+    <button type="button" id="blocked_close">Fechar</button>
+  </div>
+</dialog>
+<dialog id="uidlg" class="ui-dlg">
+  <h2 id="uititle">Aviso</h2>
+  <p class="ui-msg" id="uimsg"></p>
+  <input type="text" id="uiinput" class="ui-input" style="display:none">
+  <div class="actions">
+    <button type="button" id="uicancel" style="display:none">Cancelar</button>
+    <button type="button" class="primary" id="uiok">OK</button>
+  </div>
+</dialog>
+
+<dialog id="occdlg">
+  <h2 id="occtitle">Mesa ocupada</h2>
+  <div id="occbody" style="font-size:14px;line-height:1.5"></div>
+  <div class="actions" style="margin-top:14px;flex-wrap:wrap">
+    <button type="button" data-st="booked" id="occ_booked">Efetuada</button>
+    <button type="button" data-st="confirmed" id="occ_confirmed">Confirmada</button>
+    <button type="button" data-st="arrived" id="occ_arrived">Chegou</button>
+    <button type="button" data-st="seated" id="occ_seated">Sentado</button>
+    <button type="button" data-st="left" id="occ_left">Saiu (liberar mesa)</button>
+    <button type="button" data-st="noshow" id="occ_noshow">Não compareceu</button>
+    <button type="button" id="occ_edit">Editar reserva</button>
+    <button type="button" id="occ_close">Fechar</button>
+  </div>
+</dialog>
+
+<dialog id="hoursdlg">
+  <h2>Turnos e horários</h2>
+  <p class="muted">Defina primeiro o horário geral do restaurante. Depois crie turnos <b>sem sobreposição</b> dentro desse intervalo.</p>
+  <div class="hours-row" style="margin-top:12px">
+    <div class="field"><label>Abertura do restaurante</label><input type="time" id="day_open" value="12:00"></div>
+    <div class="field"><label>Fecho do restaurante</label><input type="time" id="day_close" value="23:00"></div>
+  </div>
+  <h3 style="font-size:14px;margin:16px 0 8px">Turnos</h3>
+  <div class="shift-editor-head">
+    <span>Nome</span><span>Início</span><span>Fim</span><span>Ativo</span><span></span>
+  </div>
+  <div id="shifteditor"></div>
+  <p class="muted" id="shiftgapshint" style="margin-top:8px;font-size:12px"></p>
+  <div class="actions" style="margin-top:12px">
+    <button type="button" id="addshift">+ Novo turno</button>
+  </div>
+  <div class="actions" style="margin-top:16px">
+    <button class="primary" id="savehours">Guardar horários</button>
+    <button id="closehours">Fechar</button>
+  </div>
+</dialog>
+
+<dialog id="dlg">
+  <h2>Salas e mesas</h2>
+  <p class="muted">Crie ou apague salas. Em cada sala defina quantas mesas e quantos lugares cada uma tem.</p>
+  <div class="room-list" id="roomlist"></div>
+  <div class="add-room-row">
+    <div class="field" style="flex:1;min-width:120px">
+      <label>Nome da nova sala</label>
+      <input id="newroomname" placeholder="Ex.: Terraço">
+    </div>
+    <div class="field" style="width:90px">
+      <label>Nº mesas</label>
+      <input id="newroomqty" type="number" min="1" max="40" value="4">
+    </div>
+    <div class="field" style="width:90px">
+      <label>Lugares (padrão)</label>
+      <input id="newroomcap" type="number" min="1" max="20" value="4">
+    </div>
+    <button class="primary" id="addroom">+ Criar sala</button>
+  </div>
+  <div class="actions" style="margin-top:14px">
+    <button class="primary" id="saveconfig">Guardar tudo</button>
+    <button id="close">Fechar</button>
+  </div>
+</dialog>
+
+<dialog id="tblinfo">
+  <h2 id="tbltitle">Editar mesa</h2>
+  <div class="formgrid" style="margin-top:10px">
+    <div class="field"><label>Número da mesa</label><input id="ti_name"></div>
+    <div class="field"><label>Capacidade</label><input id="ti_cap" type="number" min="1"></div>
+    <div class="field full"><label>Forma</label>
+      <div class="shapepicker">
+        <label><input type="radio" name="shape" value="round"> Redonda</label>
+        <label><input type="radio" name="shape" value="square"> Quadrada</label>
+        <label><input type="radio" name="shape" value="rect" checked> Retangular</label>
+      </div>
+    </div>
+  </div>
+  <div class="actions" style="margin-top:12px">
+    <button class="primary" id="tisave">Guardar</button>
+    <button id="ticlose">Fechar</button>
+  </div>
+</dialog>
+
+<script>
+const $ = x => document.getElementById(x);
+const defaults = [
+  ["M1",2,"Sala 1","square"],["M2",2,"Sala 1","square"],["M3",4,"Sala 1","rect"],["M4",4,"Sala 1","rect"],
+  ["M5",4,"Sala 1","rect"],["M6",6,"Sala 1","rect"],
+  ["M7",2,"Sala 2","square"],["M8",2,"Sala 2","square"],["M9",4,"Sala 2","rect"],["M10",4,"Sala 2","rect"],
+  ["M11",6,"Sala 2","round"],["M12",6,"Sala 2","round"],
+  ["E1",2,"Esplanada","square"],["E2",2,"Esplanada","square"],["E3",4,"Esplanada","rect"],
+  ["E4",4,"Esplanada","rect"],["E5",4,"Esplanada","rect"],["E6",6,"Esplanada","round"]
+];
+
+function defaultPos(i) {
+  const cols = 5;
+  return { x: 4 + (i % cols) * 18, y: 4 + Math.floor(i / cols) * 20, w: 8, h: 9 };
+}
+
+let db;
+try { db = JSON.parse(localStorage.getItem("reservas_local_v2") || localStorage.getItem("reservas_local")); } catch(e) {}
+if (!db) {
+  db = {
+    tables: defaults.map((t,i) => {
+      const p = defaultPos(i);
+      return { name:t[0], capacity:t[1], area:t[2], shape:t[3]||"rect", x:p.x, y:p.y, w:p.w, h:p.h };
+    }),
+    bookings: [],
+    ui: { rightW: 380, zoom: 1 }
+  };
+}
+if (!db.ui) db.ui = { rightW: 380, zoom: 1, restaurantName: "" };
+if (!db.clients) db.clients = {};
+if (db.ui.zoom == null) db.ui.zoom = 1;
+if (db.ui.restaurantName == null) db.ui.restaurantName = "";
+if (!db.ui.shifts) {
+  db.ui.shifts = {
+    almoco: { open: "12:00", close: "15:00", on: true },
+    jantar: { open: "19:00", close: "23:00", on: true }
+  };
+}
+// Normalizar lista de turnos (editável / expansível)
+function ensureShiftList() {
+  const mkList = () => {
+    const sh = db.ui.shifts || {};
+    const defName = id => id === "almoco" ? "Almoço" : id === "jantar" ? "Jantar" : id;
+    const arr = Object.keys(sh).length ? Object.keys(sh).map(id => ({
+      id, name: sh[id].name || defName(id), open: sh[id].open || "19:00", close: sh[id].close || "23:00", on: sh[id].on !== false
+    })) : [
+      { id: "almoco", name: "Almoço", open: "12:00", close: "15:00", on: true },
+      { id: "jantar", name: "Jantar", open: "19:00", close: "23:00", on: true }
+    ];
+    arr.sort((a, b) => (a.open || "").localeCompare(b.open || ""));
+    return arr;
+  };
+  // dados antigos: existe só o mapa "shifts" -> reconstruir a lista
+  if (!Array.isArray(db.ui.shiftList) || !db.ui.shiftList.length) {
+    db.ui.shiftList = mkList().map(s2 => ({
+      id: s2.id,
+      name: s2.name || (s2.id === "almoco" ? "Almoço" : s2.id === "jantar" ? "Jantar" : s2.id),
+      open: s2.open, close: s2.close, on: s2.on !== false
+    }));
+    const map0 = {};
+    db.ui.shiftList.forEach(s2 => { map0[s2.id] = { open: s2.open, close: s2.close, on: s2.on !== false, name: s2.name }; });
+    db.ui.shifts = map0;
+    return db.ui.shiftList;
+  }
+  if (Array.isArray(db.ui.shiftList) && db.ui.shiftList.length) {
+    // sync object map
+    const map = {};
+    db.ui.shiftList.forEach(s => { map[s.id] = { open: s.open, close: s.close, on: s.on !== false, name: s.name }; });
+    db.ui.shifts = map;
+    return db.ui.shiftList;
+  }
+  const sh = db.ui.shifts || {};
+  const list = [];
+  if (sh.almoco) list.push({ id: "almoco", name: "Almoço", open: sh.almoco.open || "12:00", close: sh.almoco.close || "15:00", on: sh.almoco.on !== false });
+  if (sh.jantar) list.push({ id: "jantar", name: "Jantar", open: sh.jantar.open || "19:00", close: sh.jantar.close || "23:00", on: sh.jantar.on !== false });
+  if (!list.length) {
+    list.push({ id: "almoco", name: "Almoço", open: "12:00", close: "15:00", on: true });
+    list.push({ id: "jantar", name: "Jantar", open: "19:00", close: "23:00", on: true });
+  }
+  db.ui.shiftList = list;
+  const map = {};
+  list.forEach(s => { map[s.id] = { open: s.open, close: s.close, on: s.on !== false, name: s.name }; });
+  db.ui.shifts = map;
+  return list;
+}
+ensureShiftList();
+if (!db.ui.dayOpen) db.ui.dayOpen = "12:00";
+if (!db.ui.dayClose) db.ui.dayClose = "23:00";
+
+db.tables.forEach((t,i) => {
+  if (!t.shape) t.shape = "rect";
+  if (t.x == null) { const p = defaultPos(i); Object.assign(t, p); }
+  if ((t.w || 0) > 12) { t.w = Math.round((t.w/2)*10)/10; t.h = Math.round(((t.h||16)/2)*10)/10; }
+  if (!t.w) t.w = 8;
+  if (!t.h) t.h = 9;
+});
+db.bookings.forEach(b => {
+  if (typeof b.table === "string") b.table = b.table ? [b.table] : [];
+  if (!Array.isArray(b.table)) b.table = [];
+  if (!b.status) b.status = "booked";
+  if (!b.shift) {
+    // infer shift from time
+    const t = b.time || "20:00";
+    b.shift = (t < "17:00") ? "almoco" : "jantar";
+  }
+});
+
+let zone = (db.tables[0] && db.tables[0].area) || "Sala 1";
+let chosen = new Set();
+let editMap = false;
+let dragState = null;
+let editingTableName = null;
+let splitDragging = false;
+
+const areas = () => [...new Set(db.tables.map(t => t.area))];
+const bookings = () => db.bookings.filter(b => {
+    if (b.date !== $("day").value || !isActiveStatus(b.status || "confirmed")) return false;
+    if (viewShift !== "all" && (b.shift || "jantar") !== viewShift) return false;
+    return true;
+  }).sort((a,b) => a.time.localeCompare(b.time));
+const allBookingsDay = () => db.bookings.filter(b => {
+    if (b.date !== $("day").value) return false;
+    if (viewShift !== "all" && (b.shift || "jantar") !== viewShift) return false;
+    return true;
+  }).sort((a,b) => a.time.localeCompare(b.time));
+const save = () => {
+  localStorage.setItem("reservas_local_v2", JSON.stringify(db));
+  localStorage.setItem("reservas_local", JSON.stringify(db));
+};
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ===== v22: atrasos, clientes, capacidade, pesquisa ===== */
+const LATE_MIN = 15;
+const normTxt = s => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+const digitsOf = s => String(s ?? "").replace(/\D/g, "");
+const isWalkinName = n => { const x = normTxt(n); return x === "walkin" || x.startsWith("walk-in") || x.startsWith("walk in"); };
+const todayStr = () => new Date().toLocaleDateString("en-CA");
+const seatsOf = t => +(t.seats ?? t.capacity) || 0;
+function bookingCapacity(b) { return tablesOf(b).reduce((n, nm) => { const t = db.tables.find(x => x.name === nm); return n + (t ? seatsOf(t) : 0); }, 0); }
+function overCapacity(b) { const c = bookingCapacity(b); return c > 0 && (+b.pax || 0) > c ? c : 0; }
+function bookingsForTable(name, bs) {
+  const order = getShiftList().map(x => x.id);
+  const idx = b => { const i = order.indexOf(b.shift || "jantar"); return i < 0 ? 99 : i; };
+  return bs.filter(x => tablesOf(x).includes(name)).sort((a, b) => idx(a) - idx(b) || a.time.localeCompare(b.time));
+}
+function clientKeysOf(name, phone) {
+  const k = [], d = digitsOf(phone);
+  if (d.length >= 6) k.push("p:" + d.slice(-9));
+  const n = normTxt(name);
+  if (n && !isWalkinName(name)) k.push("n:" + n);
+  return k;
+}
+function findClient(name, phone) {
+  for (const k of clientKeysOf(name, phone)) if (db.clients[k]) return { key: k, ...db.clients[k] };
+  return null;
+}
+function clientOf(b) { return isWalkinName(b.name) ? null : findClient(b.name, b.phone); }
+function clientBookings(name, phone, excludeId) {
+  const keys = clientKeysOf(name, phone);
+  if (!keys.length) return [];
+  return db.bookings.filter(b => b.id !== excludeId && clientKeysOf(b.name, b.phone).some(k => keys.includes(k)))
+    .sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+}
+function lateInfo(b) {
+  if (b.date !== todayStr()) return null;
+  const st = b.status || "confirmed";
+  if (st !== "confirmed" && st !== "arrived") return null;
+  const [h, m] = (b.time || "00:00").split(":").map(Number);
+  let ref = new Date(); ref.setHours(h, m, 0, 0);
+  if (st === "arrived" && b.arrivedAt) { const a = new Date(b.arrivedAt); if (a > ref) ref = a; }
+  const mins = Math.floor((Date.now() - ref.getTime()) / 60000);
+  return mins >= LATE_MIN ? { kind: st === "confirmed" ? "arrival" : "seat", mins } : null;
+}
+const lateText = li => li.kind === "arrival" ? `Atraso de ${li.mins} min — ainda não chegou` : `${li.mins} min de espera — chegou mas ainda não sentou`;
+function bookingAlertsHtml(b) {
+  const out = [], li = lateInfo(b), oc = overCapacity(b), cl = clientOf(b);
+  if (li) out.push(`<div class="alert late">⏰ ${lateText(li)}</div>`);
+  if (oc) out.push(`<div class="alert over">⚠ ${b.pax} pessoas para ${oc} lugares</div>`);
+  if (cl && cl.allergies) out.push(`<div class="alert all">❗ Alergias: ${esc(cl.allergies)}</div>`);
+  if (cl && cl.notes) out.push(`<div class="alert note">📝 ${esc(cl.notes)}</div>`);
+  return out.join("");
+}
+function clientFlagsHtml(b) { const cl = clientOf(b); return cl && cl.vip ? ' <span class="vip-chip">★ VIP</span>' : ""; }
+function nomeMesa(nm) { return String(nm || "").replace(/^[A-Za-z]+\s*/, "").replace(/^0+(?=\d)/, "") || String(nm || ""); }
+const tableTag = nm => `<span class="tlab">Mesa: <b>${esc(nomeMesa(nm))}</b></span>`;
+function tablesLabel(b) { const ts = tablesOf(b); return ts.length ? ts.map(nomeMesa).join(", ") : "Mesa por atribuir"; }
+function tablesHtml(b) { const ts = tablesOf(b); return ts.length ? "Mesa: " + ts.map(nm => `<b>${esc(nomeMesa(nm))}</b>`).join(",") : "Mesa por atribuir"; }
+function tileSlotHtml(b, multi) {
+  const st = b.status || "confirmed", cl = clientOf(b), li = lateInfo(b), oc = overCapacity(b);
+  const fl = (cl && cl.vip ? '<i class="fl">★</i>' : "") + (cl && cl.allergies ? '<i class="fl">❗</i>' : "") + (li ? '<i class="fl">⏰</i>' : "") + (oc ? '<i class="fl">⚠</i>' : "");
+  const extra = tablesOf(b).length > 1 ? ` (+${tablesOf(b).length - 1})` : "";
+  const tag = multi ? "" : `<span class="ts-shift">${esc(shiftLabel(b.shift || "jantar"))}</span>`;
+  if (multi) {
+    return `<div class="tslot ${st}${li ? " is-late" : ""}" data-bid="${esc(b.id)}" title="${esc(b.time + " · " + b.name + " · " + b.pax + " pax · " + statusLabel(st) + " · " + shiftLabel(b.shift || "jantar"))}">
+      <div class="ts-top"><span class="ts-time">${esc(b.time)}</span><span class="ts-pax">${b.pax}p</span>${fl}</div></div>`;
+  }
+  return `<div class="tslot ${st}${li ? " is-late" : ""}" data-bid="${esc(b.id)}" title="${esc(b.time + " · " + b.name + " · " + b.pax + " pax · " + statusLabel(st))}">
+    <div class="ts-top"><span class="ts-time">${esc(b.time)}</span><span class="ts-pax">${b.pax}p</span>${fl}${tag}</div>
+    <div class="ts-name">${esc(b.name)}${extra}</div></div>`;
+}
+function updateCapWarn() {
+  const el = $("capwarn"); if (!el) return;
+  const pax = +$("pax").value || 0;
+  const cap = [...chosen].reduce((n, nm) => { const t = db.tables.find(x => x.name === nm); return n + (t ? seatsOf(t) : 0); }, 0);
+  if (chosen.size && pax > cap) {
+    el.hidden = false;
+    el.textContent = `⚠ ${pax} pessoas > ${cap} lugares nas mesas escolhidas. Junte mesas ou escolha uma maior.`;
+  } else el.hidden = true;
+}
+let currentClientKey = null;
+function refreshClientBox(forceFill) {
+  const name = $("name").value.trim(), phone = $("phone").value.trim();
+  const walk = isWalkinName(name);
+  const found = walk ? null : findClient(name, phone);
+  const list = walk ? [] : clientBookings(name, phone, $("id").value);
+  const dirty = $("c_vip").checked || $("c_allergies").value || $("c_notes").value;
+  if (found && (forceFill || !dirty)) {
+    $("c_vip").checked = !!found.vip; $("c_allergies").value = found.allergies || ""; $("c_notes").value = found.notes || "";
+  }
+  currentClientKey = found ? found.key : null;
+  const visits = list.filter(b => b.status === "seated" || b.status === "left").length;
+  const ns = list.filter(b => b.status === "noshow").length;
+  const info = $("clientinfo");
+  if (list.length || found) {
+    info.hidden = false;
+    info.textContent = `Cliente conhecido · ${visits} visita(s) · ${ns} não compareceu · ${list.length} reserva(s) no histórico`;
+  } else info.hidden = true;
+  const hb = $("histbox");
+  hb.hidden = !list.length;
+  $("histsum").textContent = `Histórico (${list.length})`;
+  $("histlist").innerHTML = list.slice(0, 15).map(b => `<div>${new Date(b.date + "T12:00:00").toLocaleDateString("pt-PT")} · ${esc(shiftLabel(b.shift || "jantar"))} · ${b.pax}p · ${tablesHtml(b)} · ${statusLabel(b.status || "confirmed")}${b.notes ? " · " + esc(b.notes) : ""}</div>`).join("");
+  updateCapWarn();
+}
+function upsertClientFromForm(x) {
+  if (isWalkinName(x.name)) return;
+  const vip = $("c_vip").checked, allergies = $("c_allergies").value.trim(), notes = $("c_notes").value.trim();
+  const keys = clientKeysOf(x.name, x.phone);
+  if (!keys.length) return;
+  const ex = findClient(x.name, x.phone);
+  if (!ex && !(vip || allergies || notes)) return;
+  const key = ex ? (ex.key.startsWith("p:") ? ex.key : keys[0]) : keys[0];
+  if (ex && ex.key !== key) delete db.clients[ex.key];
+  db.clients[key] = { name: x.name, phone: x.phone, vip, allergies, notes };
+}
+function searchBookings(q) {
+  const nq = normTxt(q), dq = digitsOf(q), today = todayStr();
+  const tokens = nq.split(/\s+/).filter(Boolean);
+  const phoneMode = dq.length >= 3 && /^[\d\s+()-]+$/.test(q.trim());
+  const res = db.bookings.filter(b => phoneMode ? digitsOf(b.phone).includes(dq)
+    : tokens.every(t => (normTxt(b.name) + " " + digitsOf(b.phone)).includes(t)));
+  const key = b => b.date + b.time;
+  return [...res.filter(b => b.date >= today).sort((a, b) => key(a).localeCompare(key(b))),
+          ...res.filter(b => b.date < today).sort((a, b) => key(b).localeCompare(key(a)))];
+}
+function renderSearch() {
+  const q = $("search").value.trim(), box = $("searchres");
+  if (q.length < 2) { box.hidden = true; return; }
+  const r = searchBookings(q);
+  box.hidden = false;
+  box.innerHTML = `<div class="sr-h">${r.length} resultado(s)</div>` + r.slice(0, 40).map(b => {
+    const cl = clientOf(b);
+    return `<button type="button" data-id="${esc(b.id)}"><b>${new Date(b.date + "T12:00:00").toLocaleDateString("pt-PT")} ${esc(b.time)}</b> · ${esc(b.name)} · ${b.pax}p${cl && cl.vip ? " ★" : ""}${cl && cl.allergies ? " ❗" : ""}<br><span class="muted">${esc(shiftLabel(b.shift || "jantar"))} · ${tablesHtml(b)} · ${statusLabel(b.status || "confirmed")}${b.phone ? " · " + esc(b.phone) : ""}</span></button>`;
+  }).join("");
+  box.querySelectorAll("button").forEach(btn => btn.onclick = () => { box.hidden = true; jumpToBooking(btn.dataset.id); });
+}
+function jumpToBooking(id) {
+  const b = db.bookings.find(x => x.id === id); if (!b) return;
+  $("day").value = b.date; viewShift = "all";
+  viewStatuses.add(b.status || "confirmed");
+  updateStatusTabs();
+  $("statustabs").querySelectorAll("button").forEach(btn => btn.classList.toggle("active", viewStatuses.has(btn.dataset.status)));
+  if (b.area && areas().includes(b.area)) zone = b.area;
+  clearform(); render();
+  const row = document.querySelector(`#list .booking[data-bid="${CSS.escape(b.id)}"]`);
+  if (row) { row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 2600); }
+}
+
+function tablesOf(b) {
+  if (Array.isArray(b.table)) return b.table;
+  if (typeof b.table === "string" && b.table) return [b.table];
+  return [];
+}
+
+// ---- Bloqueio de salas por dia/turno ----
+function roomBlockOf(area, day) {
+  db.roomBlocks = db.roomBlocks || [];
+  return db.roomBlocks.find(r => r.area === area && r.date === day);
+}
+// shift vazio/"all" => só conta se bloqueada o dia todo ou em todos os turnos ativos
+function roomBlockedFor(area, day, shift) {
+  const r = roomBlockOf(area, day);
+  if (!r) return false;
+  if (r.allDay) return true;
+  const sh = r.shifts || [];
+  if (!shift || shift === "all") {
+    const act = getShiftList().filter(s => s.on !== false).map(s => s.id);
+    return act.length > 0 && act.every(id => sh.includes(id));
+  }
+  return sh.includes(shift);
+}
+function roomBlockText(area, day) {
+  const r = roomBlockOf(area, day);
+  if (!r) return "";
+  if (r.allDay) return "Sala bloqueada o dia todo";
+  if (!(r.shifts || []).length) return "";
+  return "Sala bloqueada no(s) turno(s): " + r.shifts.map(id => shiftLabel(id)).join(", ");
+}
+function isActiveStatus(st) {
+  return st !== "cancelled" && st !== "left" && st !== "noshow";
+}
+// no-show é contabilizado como cancelamento
+function isCancelStatus(st) { return st === "cancelled" || st === "noshow"; }
+function isCancelBooking(b) { return isCancelStatus(b.status || "confirmed"); }
+function occupiedTableNames(shift, excludeId) {
+  const day = $("day").value;
+  const names = new Set();
+  db.tables.forEach(t => { if (t.blocked || roomBlockedFor(t.area, day, shift)) names.add(t.name); });
+  db.bookings.forEach(b => {
+    if (b.date !== day || !isActiveStatus(b.status || "confirmed")) return;
+    if (excludeId && b.id === excludeId) return;
+    const bs = b.shift || ((b.time || "") < "17:00" ? "almoco" : "jantar");
+    if (shift && bs !== shift) return;
+    tablesOf(b).forEach(t => names.add(t));
+  });
+  return names;
+}
+function firstFreeTable(area, shift, excludeId, pax) {
+  const occ = occupiedTableNames(shift, excludeId);
+  let candidates = db.tables.filter(t => t.area === area && !occ.has(t.name));
+  if (pax) {
+    const fit = candidates.filter(t => (+(t.seats || t.capacity) || 0) >= +pax);
+    if (fit.length) candidates = fit;
+  }
+  candidates.sort((a, b) => (+(a.seats || a.capacity) || 0) - (+(b.seats || b.capacity) || 0));
+  return candidates[0] || null;
+}
+function autoPickTable() {
+  const shift = $("shift") ? $("shift").value : null;
+  const area = $("area") ? $("area").value : (areas()[0] || "");
+  const pax = $("pax") ? +$("pax").value : 2;
+  const excludeId = $("id") ? $("id").value : "";
+  if (chosen.size) {
+    const occ = occupiedTableNames(shift, excludeId);
+    [...chosen].forEach(n => { if (occ.has(n)) chosen.delete(n); });
+  }
+  if (!chosen.size) {
+    const free = firstFreeTable(area, shift, excludeId, pax);
+    if (free) chosen.add(free.name);
+  }
+}
+
+
+function formatElapsed(ms) {
+  if (ms < 0) ms = 0;
+  const totalSec = Math.floor(ms / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (h > 0) return h + "h " + String(m).padStart(2,"0") + "m";
+  return String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0");
+}
+function bookingTimerHtml(b) {
+  const st = b.status || "confirmed";
+  if (st === "arrived" || st === "seated") {
+    if (!b.arrivedAt) return "";
+    const ms = Date.now() - new Date(b.arrivedAt).getTime();
+    return `<span class="timer" data-timer="${esc(b.id)}" data-start="${esc(b.arrivedAt)}">⏱ ${formatElapsed(ms)}</span>`;
+  }
+  if (st === "left" && b.arrivedAt) {
+    const end = b.leftAt ? new Date(b.leftAt).getTime() : Date.now();
+    const ms = end - new Date(b.arrivedAt).getTime();
+    return `<span class="timer stopped">⏱ ${formatElapsed(ms)}</span>`;
+  }
+  return "";
+}
+let timerInterval = null;
+function startTimerTicks() {
+  if (timerInterval) return;
+  timerInterval = setInterval(() => {
+    document.querySelectorAll("[data-timer][data-start]").forEach(el => {
+      const start = el.getAttribute("data-start");
+      if (!start) return;
+      const ms = Date.now() - new Date(start).getTime();
+      el.textContent = "⏱ " + formatElapsed(ms);
+    });
+  }, 1000);
+}
+startTimerTicks();
+
+function statusLabel(s) {
+  return ({booked:"Efetuada", confirmed:"Confirmada", arrived:"Chegou", seated:"Sentado", left:"Saiu", cancelled:"Cancelada", noshow:"Não compareceu"})[s] || s;
+}
+function getZoom() {
+  return Math.max(0.5, Math.min(3, db.ui.zoom || 1));
+}
+let viewShift = "all"; // all | almoco | jantar
+let viewStatuses = new Set(["booked", "confirmed", "arrived", "seated", "left", "cancelled", "noshow"]);
+
+function filterByStatus(list) {
+  if (!viewStatuses.size) return [];
+  return list.filter(b => viewStatuses.has(b.status || "confirmed"));
+}
+
+
+function getShifts() {
+  ensureShiftList();
+if (!db.ui.dayOpen) db.ui.dayOpen = "12:00";
+if (!db.ui.dayClose) db.ui.dayClose = "23:00";
+  return db.ui.shifts;
+}
+function getShiftList() {
+  return ensureShiftList();
+if (!db.ui.dayOpen) db.ui.dayOpen = "12:00";
+if (!db.ui.dayClose) db.ui.dayClose = "23:00";
+}
+function shiftLabel(s) {
+  const list = getShiftList();
+  const found = list.find(x => x.id === s);
+  if (found) return found.name;
+  if (s === "almoco") return "Almoço";
+  if (s === "jantar") return "Jantar";
+  return s || "";
+}
+function timeInShift(time, shiftKey) {
+  const sh = getShifts()[shiftKey];
+  if (!sh || !sh.on) return false;
+  return time >= sh.open && time <= sh.close;
+}
+function defaultTimeForShift(shiftKey) {
+  const sh = getShifts()[shiftKey];
+  if (!sh) return "20:00";
+  // mid-point-ish: use open + 30min or open
+  return sh.open || "12:00";
+}
+function applyShiftToTimeInput() {
+  const shift = $("shift").value;
+  const sh = getShifts()[shift];
+  if (!sh) return;
+  $("time").min = sh.open;
+  $("time").max = sh.close;
+  $("timehint").textContent = "Horário do turno: " + sh.open + " – " + sh.close;
+  // if current time outside, snap to open
+  if ($("time").value < sh.open || $("time").value > sh.close) {
+    $("time").value = sh.open;
+  }
+}
+function fillShiftSelect() {
+  const list = getShiftList().filter(s => s.on !== false);
+  const opts = list.map(s => `<option value="${esc(s.id)}">${esc(s.name)} (${s.open}–${s.close})</option>`);
+  if (!opts.length) opts.push('<option value="jantar">Jantar</option>');
+  const prev = $("shift").value;
+  $("shift").innerHTML = opts.join("");
+  if (prev && [...$("shift").options].some(o => o.value === prev)) $("shift").value = prev;
+  else if (list[0]) $("shift").value = list[0].id;
+  applyShiftToTimeInput();
+}
+
+
+/* —— Split resize (não altera tamanho das mesas) —— */
+function applySplit() {
+  const w = db.ui.rightW || 380;
+  $("splitright").style.width = w + "px";
+  document.documentElement.style.setProperty("--right-w", w + "px");
+}
+applySplit();
+
+// Nome do restaurante (centro do cabeçalho)
+function updateRestaurantDisplay() {
+  const el = $("restaurantdisplay");
+  if (!el) return;
+  const name = (db.ui.restaurantName || "").trim();
+  if (name) {
+    el.textContent = name;
+    el.classList.remove("is-empty");
+  } else {
+    el.textContent = "Nome do restaurante";
+    el.classList.add("is-empty");
+  }
+}
+function loadRestaurantName() {
+  updateRestaurantDisplay();
+}
+loadRestaurantName();
+
+$("editrestname").onclick = async () => {
+  const cur = db.ui.restaurantName || "";
+  const name = await uiPrompt("Nome do restaurante:", cur, "Nome do restaurante");
+  if (name === null) return;
+  db.ui.restaurantName = name.trim();
+  save();
+  updateRestaurantDisplay();
+};
+
+$("menubtn").onclick = (e) => {
+  e.stopPropagation();
+  $("headermenu").classList.toggle("open");
+};
+document.addEventListener("click", (e) => {
+  const menu = $("headermenu");
+  const btn = $("menubtn");
+  if (!menu || !btn) return;
+  if (menu.contains(e.target) || btn.contains(e.target)) return;
+  menu.classList.remove("open");
+});
+
+
+$("splithandle").addEventListener("pointerdown", e => {
+  if (e.button !== 0) return;
+  e.preventDefault();
+  splitDragging = true;
+  $("splithandle").classList.add("dragging");
+  $("splithandle").setPointerCapture(e.pointerId);
+});
+document.addEventListener("pointermove", e => {
+  if (!splitDragging) return;
+  const split = $("split");
+  const rect = split.getBoundingClientRect();
+  const fromRight = rect.right - e.clientX;
+  const minR = 140, maxR = Math.max(minR, rect.width - 140);
+  const w = Math.max(minR, Math.min(maxR, fromRight));
+  db.ui.rightW = Math.round(w);
+  applySplit();
+  // mesas em px — não precisam de re-render
+});
+document.addEventListener("pointerup", e => {
+  if (!splitDragging) return;
+  splitDragging = false;
+  $("splithandle").classList.remove("dragging");
+  save();
+});
+
+/* —— Zoom —— */
+function updateZoomLabel() {
+  $("zoomlabel").textContent = Math.round(getZoom() * 100) + "%";
+}
+$("zoomin").onclick = () => {
+  db.ui.zoom = Math.min(3, Math.round((getZoom() + 0.15) * 100) / 100);
+  save(); updateZoomLabel(); renderFloor();
+};
+$("zoomout").onclick = () => {
+  db.ui.zoom = Math.max(0.5, Math.round((getZoom() - 0.15) * 100) / 100);
+  save(); updateZoomLabel(); renderFloor();
+};
+updateZoomLabel();
+
+/* —— Selects / floor —— */
+function selects() {
+  const prevArea = $("area").value;
+  $("area").innerHTML = areas().map(x => `<option>${esc(x)}</option>`).join("");
+  if (prevArea && areas().includes(prevArea)) $("area").value = prevArea;
+  const ar = $("area").value;
+  const shift = $("shift") ? $("shift").value : null;
+  const excludeId = $("id") ? $("id").value : "";
+  const occ = occupiedTableNames(shift, excludeId);
+  // Só mesas livres neste turno (ocupadas ficam ocultas)
+  const tablesInArea = db.tables.filter(x => x.area === ar && !occ.has(x.name));
+  [...chosen].forEach(n => {
+    if (!tablesInArea.some(t => t.name === n)) chosen.delete(n);
+  });
+  $("tablechecks").innerHTML = tablesInArea.length
+    ? tablesInArea.map(t => {
+        const checked = chosen.has(t.name) ? "checked" : "";
+        const seats = t.seats ?? t.capacity ?? "?";
+        return `<label><input type="checkbox" value="${esc(t.name)}" ${checked}> ${esc(t.name)} <span class="muted">(${seats}p)</span></label>`;
+      }).join("")
+    : `<span class="muted">Sem mesas livres nesta sala neste turno</span>`;
+  $("tablechecks").querySelectorAll("input").forEach(cb => {
+    cb.onchange = () => {
+      if (cb.checked) chosen.add(cb.value); else chosen.delete(cb.value);
+      renderFloor(); updateCapWarn();
+    };
+  });
+}
+
+function bookingForTable(name, bs) {
+  return bs.find(x => tablesOf(x).includes(name));
+}
+
+function renderFloor() {
+  updateCapWarn();
+  const bs = bookings();
+  const floor = $("floor");
+  const wrap = $("floorwrap");
+  floor.innerHTML = "";
+  let banner = $("roomblockbanner");
+  if (!banner) { banner = document.createElement("div"); banner.id = "roomblockbanner"; banner.className = "room-block-banner"; wrap.parentNode.insertBefore(banner, wrap); }
+  const rbt = roomBlockText(zone, $("day").value);
+  banner.textContent = rbt ? "⛔ " + zone + ": " + rbt : "";
+  banner.style.display = rbt ? "" : "none";
+
+  // Zoom no floor plan inteiro: o canvas cresce e o layout (posições + mesas) escala junto
+  const z = getZoom();
+  floor.style.width = (z * 100) + "%";
+  floor.style.height = (z * 100) + "%";
+  floor.style.minHeight = (z * 100) + "%";
+
+  db.tables.filter(t => t.area === zone).forEach(t => {
+    const tb = bookingsForTable(t.name, bs);
+    const b = tb[0], multi = tb.length > 1;
+    const isSel = chosen.has(t.name);
+    const rBlk = roomBlockedFor(t.area, $("day").value, viewShift);
+    const isBlk = t.blocked || rBlk;
+    const st = b ? (b.status || "confirmed") : (isBlk ? "blocked" : "");
+    const el = document.createElement("div");
+    el.className = `tbl ${t.shape || "rect"} ${b ? (multi ? "multi" : st || "busy") + " filled" : (isBlk ? "blocked" : "")} ${isSel ? "sel" : ""}`;
+    el.dataset.t = t.name;
+
+    // Posição e tamanho em % do floor — ao fazer zoom o floor cresce e tudo escala junto
+    el.style.left = (t.x ?? 4) + "%";
+    el.style.top = (t.y ?? 4) + "%";
+    el.style.width = (t.w ?? 8) + "%";
+    if (t.shape === "round" || t.shape === "square") {
+      el.style.aspectRatio = "1";
+      el.style.height = "auto";
+    } else {
+      el.style.height = (t.h ?? 9) + "%";
+    }
+    el.style.fontSize = "";
+
+    if (b) {
+      el.innerHTML = `<div class="tn"><b>${esc(nomeMesa(t.name))}</b><span>${t.seats ?? t.capacity ?? "?"} lug.</span></div><div class="tslots">${tb.map(x => tileSlotHtml(x, multi)).join("")}</div>`;
+    } else {
+      const info = isBlk ? (rBlk && !t.blocked ? "Sala bloqueada" : "Bloqueada") : "Livre";
+      const badge = isBlk ? `<span class="badge blocked">Bloqueada</span>` : "";
+      el.innerHTML = `<b>${esc(nomeMesa(t.name))}</b><span class="info">${info}</span>${badge}<span class="info muted">${t.seats ?? t.capacity ?? "?"} lug.</span>`;
+    }
+
+    el.addEventListener("click", (ev) => {
+      if (dragState) return;
+      if (window._skipTableClick) { window._skipTableClick = false; return; }
+      if (editMap) { openTableEditor(t.name); return; }
+      const name = t.name;
+      if (t.blocked) {
+        openBlockedTablePopup(t);
+        return;
+      }
+      if (rBlk && !tb.length) {
+        uiAlert(roomBlockText(t.area, $("day").value) + ". Use “Bloquear sala” para alterar.", "Sala bloqueada");
+        return;
+      }
+      const sl = ev.target.closest && ev.target.closest(".tslot");
+      const bb = sl ? db.bookings.find(z => z.id === sl.dataset.bid) : tb[0];
+      if (bb) {
+        openOccupiedTablePopup(bb);
+        return;
+      }
+      openFreeTablePopup(t);
+    });
+
+    if (editMap) {
+      el.style.cursor = "grab";
+      el.addEventListener("pointerdown", e => {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        el.setPointerCapture(e.pointerId);
+        const floorRect = floor.getBoundingClientRect();
+        dragState = {
+          el, name: t.name,
+          startX: e.clientX, startY: e.clientY,
+          origX: t.x ?? 4, origY: t.y ?? 4,
+          rectW: floorRect.width, rectH: floorRect.height,
+          moved: false
+        };
+        el.classList.add("dragging");
+      });
+    }
+    floor.appendChild(el);
+  });
+
+  if (!db.tables.filter(t => t.area === zone).length) {
+    floor.innerHTML = '<div class="empty">Sem mesas nesta área. Use “Salas e mesas” para criar.</div>';
+  }
+}
+
+function onPointerMove(e) {
+  if (!dragState) return;
+  const pdx = e.clientX - dragState.startX;
+  const pdy = e.clientY - dragState.startY;
+  if (Math.abs(pdx) > 4 || Math.abs(pdy) > 4) dragState.moved = true;
+  if (!dragState.moved) return; // clique simples — não arrastar ainda
+  const dx = (pdx / dragState.rectW) * 100;
+  const dy = (pdy / dragState.rectH) * 100;
+  let nx = Math.max(0, Math.min(92, dragState.origX + dx));
+  let ny = Math.max(0, Math.min(92, dragState.origY + dy));
+  dragState.el.style.left = nx + "%";
+  dragState.el.style.top = ny + "%";
+  dragState.curX = nx; dragState.curY = ny;
+}
+function onPointerUp(e) {
+  if (!dragState) return;
+  const wasMoved = !!dragState.moved;
+  const t = db.tables.find(x => x.name === dragState.name);
+  if (t && wasMoved && dragState.curX != null) {
+    t.x = Math.round(dragState.curX * 10) / 10;
+    t.y = Math.round(dragState.curY * 10) / 10;
+    // não grava ainda — só com "Confirmar alteração"
+  }
+  dragState.el.classList.remove("dragging");
+  // se não moveu, permite que o click abra o editor
+  window._skipTableClick = wasMoved;
+  dragState = null;
+}
+document.addEventListener("pointermove", onPointerMove);
+document.addEventListener("pointerup", onPointerUp);
+document.addEventListener("pointercancel", onPointerUp);
+
+function openTableEditor(name) {
+  const t = db.tables.find(x => x.name === name);
+  if (!t) return;
+  editingTableName = name;
+  $("tbltitle").textContent = "Editar mesa " + name;
+  $("ti_name").value = t.name;
+  $("ti_cap").value = t.capacity;
+  document.querySelectorAll('input[name="shape"]').forEach(r => { r.checked = r.value === (t.shape || "rect"); });
+  $("tblinfo").showModal();
+}
+$("tisave").onclick = () => {
+  const t = db.tables.find(x => x.name === editingTableName);
+  if (!t) return;
+  const newName = $("ti_name").value.trim();
+  if (!newName) { uiAlert("Nome obrigatório"); return; }
+  if (newName !== t.name && db.tables.some(x => x.name === newName)) { uiAlert("Nome já existe"); return; }
+  if (newName !== t.name) {
+    db.bookings.forEach(b => { b.table = tablesOf(b).map(n => n === t.name ? newName : n); });
+    if (chosen.has(t.name)) { chosen.delete(t.name); chosen.add(newName); }
+    t.name = newName;
+  }
+  t.capacity = +$("ti_cap").value || 2;
+  t.shape = document.querySelector('input[name="shape"]:checked')?.value || "rect";
+  save(); $("tblinfo").close(); render();
+};
+$("ticlose").onclick = () => $("tblinfo").close();
+
+function nextTableName(area) {
+  const prefix = area.replace(/\s+/g,"").slice(0,2).toUpperCase() || "T";
+  let n = 1;
+  const names = new Set(db.tables.map(t => t.name));
+  while (names.has(prefix + n) || names.has("M" + n)) n++;
+  if (!names.has("M" + n)) return "M" + n;
+  return prefix + n;
+}
+
+function renderRoomList() {
+  const byArea = {};
+  db.tables.forEach(t => {
+    if (!byArea[t.area]) byArea[t.area] = [];
+    byArea[t.area].push(t);
+  });
+  const areaNames = Object.keys(byArea).sort();
+  $("roomlist").innerHTML = areaNames.length ? areaNames.map(area => {
+    const tables = byArea[area];
+    const head = `<div class="room-table-head">
+        <span>Nº da mesa (só números)</span>
+        <span>Lugares</span>
+        <span>Tipo</span>
+        <span></span>
+      </div>`;
+    const rows = tables.map(t => `
+      <div class="room-table-row" data-name="${esc(t.name)}">
+        <input class="rt-name" value="${esc(nomeMesa(t.name))}" title="Número da mesa (só números)" placeholder="Nº">
+        <input class="rt-cap" type="number" min="1" value="${t.capacity}" title="Lugares disponíveis">
+        <select class="rt-shape" title="Tipo de mesa">
+          <option value="rect" ${t.shape==="rect"?"selected":""}>Retangular</option>
+          <option value="square" ${t.shape==="square"?"selected":""}>Quadrada</option>
+          <option value="round" ${t.shape==="round"?"selected":""}>Redonda</option>
+        </select>
+        <button class="sm danger rt-del" title="Apagar mesa">×</button>
+      </div>`).join("");
+    return `<div class="room-card" data-area="${esc(area)}">
+      <h3>
+        <span>${esc(area)} <span class="muted">(${tables.length} mesas)</span></span>
+        <span>
+          <button class="sm" data-add="${esc(area)}">+ Mesa</button>
+          <button class="sm danger" data-delroom="${esc(area)}">Apagar sala</button>
+        </span>
+      </h3>
+      <div class="room-tables">${head}${rows}</div>
+    </div>`;
+  }).join("") : '<div class="empty">Nenhuma sala. Crie uma abaixo.</div>';
+
+  $("roomlist").querySelectorAll("[data-delroom]").forEach(btn => {
+    btn.onclick = async () => {
+      const area = btn.dataset.delroom;
+      if (!(await uiConfirm(`Apagar a sala "${area}" e todas as suas mesas?`, "Apagar sala"))) return;
+      db.tables = db.tables.filter(t => t.area !== area);
+      if (zone === area) zone = areas()[0] || "";
+      renderRoomList();
+    };
+  });
+  $("roomlist").querySelectorAll("[data-add]").forEach(btn => {
+    btn.onclick = () => {
+      const area = btn.dataset.add;
+      const p = defaultPos(db.tables.filter(t => t.area === area).length);
+      db.tables.push({
+        name: nextTableName(area), capacity: 4, area, shape: "rect",
+        x: p.x, y: p.y, w: p.w, h: p.h
+      });
+      renderRoomList();
+    };
+  });
+  $("roomlist").querySelectorAll(".rt-del").forEach(btn => {
+    btn.onclick = async () => {
+      const row = btn.closest(".room-table-row");
+      const name = row.dataset.name;
+      if (!(await uiConfirm("Apagar mesa " + name + "?", "Apagar mesa"))) return;
+      db.tables = db.tables.filter(t => t.name !== name);
+      renderRoomList();
+    };
+  });
+}
+
+function collectRoomEdits() {
+  $("roomlist").querySelectorAll(".room-table-row").forEach(row => {
+    const oldName = row.dataset.name;
+    const t = db.tables.find(x => x.name === oldName);
+    if (!t) return;
+    const newName = row.querySelector(".rt-name").value.trim() || oldName;
+    const cap = +row.querySelector(".rt-cap").value || 2;
+    const shape = row.querySelector(".rt-shape").value;
+    if (newName !== oldName) {
+      if (db.tables.some(x => x.name === newName && x !== t)) {
+        uiAlert("Nome duplicado: " + newName); return;
+      }
+      db.bookings.forEach(b => { b.table = tablesOf(b).map(n => n === oldName ? newName : n); });
+      t.name = newName;
+    }
+    t.capacity = cap;
+    t.shape = shape;
+  });
+}
+
+$("addroom").onclick = () => {
+  const name = $("newroomname").value.trim();
+  const qty = Math.max(1, Math.min(40, +$("newroomqty").value || 4));
+  const cap = Math.max(1, +$("newroomcap").value || 4);
+  if (!name) { uiAlert("Indique o nome da sala."); return; }
+  if (areas().includes(name)) { uiAlert("Já existe uma sala com esse nome."); return; }
+  for (let i = 0; i < qty; i++) {
+    const p = defaultPos(i);
+    db.tables.push({
+      name: nextTableName(name), capacity: cap, area: name, shape: "rect",
+      x: p.x, y: p.y, w: p.w, h: p.h
+    });
+  }
+  $("newroomname").value = "";
+  zone = name;
+  renderRoomList();
+};
+
+$("config").onclick = () => { renderRoomList(); $("dlg").showModal(); };
+$("close").onclick = () => $("dlg").close();
+$("saveconfig").onclick = () => {
+  collectRoomEdits();
+  if (!areas().length) { uiAlert("Precisa de pelo menos uma sala com mesas."); return; }
+  if (zone && !areas().includes(zone)) zone = areas()[0];
+  save(); $("dlg").close(); render();
+};
+
+function renderTimeline() {
+  const bs = filterByStatus(allBookingsDay());
+  $("timeline").innerHTML = bs.length
+    ? bs.map(b => {
+        const isWalkin = (b.name||"").toLowerCase().startsWith("walk-in") || (b.name||"").toLowerCase()==="walkin";
+        const st = b.status || "confirmed";
+        return `<div class="slot ${st} ${isWalkin?"walkin":""}">
+          <div class="t">${esc(b.time)}</div>
+          <div><b>${esc(b.name)}</b> · ${b.pax} pax · ${shiftLabel(b.shift||"jantar")} · ${tablesHtml(b)}
+            <span class="muted"> · ${statusLabel(st)}</span> ${bookingTimerHtml(b)}</div>
+        </div>`;
+      }).join("")
+    : '<div class="empty">Sem reservas neste dia.</div>';
+}
+
+function renderList() {
+  const bs = filterByStatus(allBookingsDay()).filter(b => viewShift === "all" || (b.shift || "jantar") === viewShift);
+  $("list").innerHTML = bs.length
+    ? bs.map(b => {
+        const isWalkin = (b.name||"").toLowerCase().startsWith("walk-in") || (b.name||"").toLowerCase()==="walkin";
+        const st = b.status || "confirmed";
+        const tablesTip = tablesOf(b).map(nm => "Mesa " + nomeMesa(nm)).join(", ") || "Mesa por atribuir";
+        return `<div class="booking ${st} ${isWalkin?"walkin":""} ${lateInfo(b)?"late":""}" data-bid="${esc(b.id)}" title="${esc(tablesTip + " · " + (b.name||"") + " · " + b.pax + " pax · " + statusLabel(st))}">
+          <div class="time">${esc(b.time)}</div>
+          <div>
+            <b>${esc(b.name)} · ${b.pax} pax</b>${clientFlagsHtml(b)} ${bookingTimerHtml(b)}
+            <small>${shiftLabel(b.shift||"jantar")} · ${tablesHtml(b)} · ${esc(b.area||"")}${b.phone?" · "+esc(b.phone):""}</small>
+            <small>${esc(b.menu||"")}${b.notes?" · "+esc(b.notes):""}</small>
+            ${bookingAlertsHtml(b)}
+            <div class="status-btns">
+              <button class="sm ${st==="booked"?"on":""}" data-st="${b.id}" data-to="booked">Efetuada</button>
+              <button class="sm ${st==="confirmed"?"on":""}" data-st="${b.id}" data-to="confirmed">Confirmada</button>
+              <button class="sm ${st==="arrived"?"on":""}" data-st="${b.id}" data-to="arrived">Chegou</button>
+              <button class="sm ${st==="seated"?"on":""}" data-st="${b.id}" data-to="seated">Sentado</button><button class="sm ${st==="left"?"on":""}" data-st="${b.id}" data-to="left">Saiu</button>
+              <button class="sm ${st==="noshow"?"on":""}" data-st="${b.id}" data-to="noshow">Não compareceu</button>
+              <button class="sm ${st==="cancelled"?"on":""}" data-st="${b.id}" data-to="cancelled">Cancelar</button>
+            </div>
+          </div>
+          <div class="actions">
+            <button data-edit="${b.id}">Editar</button>
+            <button data-del="${b.id}">Apagar</button>
+          </div>
+        </div>`;
+      }).join("")
+    : '<div class="empty">Sem reservas para este dia.</div>';
+
+  $("list").querySelectorAll("[data-edit]").forEach(b => b.onclick = () => edit(b.dataset.edit));
+  $("list").querySelectorAll("[data-del]").forEach(b => {
+    b.onclick = async () => {
+      const x = db.bookings.find(z => z.id === b.dataset.del);
+      if (await uiConfirm("Apagar reserva de " + x.name + "?", "Apagar reserva")) {
+        db.bookings = db.bookings.filter(z => z.id !== x.id);
+        save(); clearform(); closeFormDlg(); render();
+      }
+    };
+  });
+  $("list").querySelectorAll("[data-st]").forEach(btn => {
+    btn.onclick = () => {
+      const b = db.bookings.find(z => z.id === btn.dataset.st);
+      if (!b) return;
+      b.status = btn.dataset.to;
+      if ((b.status === "arrived" || b.status === "seated") && !b.arrivedAt) b.arrivedAt = new Date().toISOString();
+      if (b.status === "left") {
+        if (!b.arrivedAt) b.arrivedAt = new Date().toISOString();
+        b.leftAt = new Date().toISOString();
+      }
+      save(); render();
+    };
+  });
+}
+
+function render() {
+  if (typeof updateShiftTabs === 'function' && $("shifttabs")) updateShiftTabs();
+  const bs = bookings();
+  const all = allBookingsDay();
+  const d = new Date($("day").value + "T12:00:00");
+  $("dayname").textContent = d.toLocaleDateString("pt-PT", {weekday:"long", day:"numeric", month:"long", year:"numeric"});
+  // contadores do dia inteiro (independentes do filtro de turno)
+  const dayAll = db.bookings.filter(b => b.date === $("day").value);
+  const dayActive = dayAll.filter(b => isActiveStatus(b.status || "confirmed"));
+  $("nbook").textContent = dayActive.length;
+  $("ncancel").textContent = dayAll.filter(isCancelBooking).length;
+  $("nlate").textContent = dayAll.filter(b => lateInfo(b)).length;
+
+  $("tabs").innerHTML = areas().map(a =>
+    `<button data-zone="${esc(a)}" class="${a===zone?"active":""}">${esc(a)}</button>`
+  ).join("");
+  $("tabs").querySelectorAll("button").forEach(b => {
+    b.onclick = () => { zone = b.dataset.zone; render(); };
+  });
+
+  updateStatusTabs();
+  renderFloor();
+  renderTimeline();
+  renderList();
+  selects();
+  updateZoomLabel();
+}
+
+
+
+function openOccupiedTablePopup(b) {
+  $("occtitle").innerHTML = (tablesOf(b).length ? tablesOf(b).map(tableTag).join(" ") + " · " : "") + "mesa ocupada";
+  const arrived = b.arrivedAt ? new Date(b.arrivedAt) : null;
+  const arrivedStr = arrived && !isNaN(arrived)
+    ? arrived.toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit" })
+    : (b.status === "arrived" || b.status === "seated" ? (b.time || "—") : "Ainda não chegou");
+  $("occbody").innerHTML = `
+    <p><b>${esc(b.name)}</b> · ${b.pax} pessoas</p>
+    <p class="muted">Turno: ${shiftLabel(b.shift||"jantar")} · Reserva: ${esc(b.time)}</p>
+    <p>Estado: <b>${statusLabel(b.status||"confirmed")}</b></p>
+    ${bookingAlertsHtml(b)}
+    <p>Hora de chegada: <b>${esc(arrivedStr)}</b></p>
+    ${b.phone ? `<p>Telefone: ${esc(b.phone)}</p>` : ""}
+    ${b.notes ? `<p class="muted">${esc(b.notes)}</p>` : ""}
+  `;
+  $("occdlg").dataset.id = b.id;
+  const st = b.status || "confirmed";
+  ["booked","confirmed","arrived","seated","left","noshow"].forEach(s => {
+    const btn = $("occ_" + s);
+    if (!btn) return;
+    btn.classList.toggle("occ-current", s === st);
+  });
+  $("occdlg").showModal();
+}
+function setBookingStatus(id, st) {
+  const b = db.bookings.find(x => x.id === id);
+  if (!b) return;
+  b.status = st;
+  if ((st === "arrived" || st === "seated") && !b.arrivedAt) b.arrivedAt = new Date().toISOString();
+  if (st === "left") {
+    if (!b.arrivedAt) b.arrivedAt = new Date().toISOString();
+    if (!b.leftAt) b.leftAt = new Date().toISOString();
+  }
+  if (st === "cancelled") {
+    /* mesa livre */
+  }
+  if (st === "confirmed") {
+    delete b.leftAt;
+  }
+  save();
+  render();
+}
+$("occ_booked").onclick = () => { setBookingStatus($("occdlg").dataset.id, "booked"); $("occdlg").close(); };
+$("occ_confirmed").onclick = () => { setBookingStatus($("occdlg").dataset.id, "confirmed"); $("occdlg").close(); };
+$("occ_arrived").onclick = () => { setBookingStatus($("occdlg").dataset.id, "arrived"); $("occdlg").close(); };
+$("occ_seated").onclick = () => { setBookingStatus($("occdlg").dataset.id, "seated"); $("occdlg").close(); };
+$("occ_left").onclick = () => { setBookingStatus($("occdlg").dataset.id, "left"); $("occdlg").close(); };
+$("occ_noshow").onclick = () => { setBookingStatus($("occdlg").dataset.id, "noshow"); $("occdlg").close(); };
+$("occ_edit").onclick = () => { const id = $("occdlg").dataset.id; $("occdlg").close(); edit(id); };
+$("occ_close").onclick = () => $("occdlg").close();
+
+
+/* —— Diálogos da app (substitui alert/confirm/prompt) —— */
+function uiAlert(msg, title) {
+  return new Promise(resolve => {
+    $("uititle").textContent = title || "Aviso";
+    $("uimsg").textContent = msg;
+    $("uiinput").style.display = "none";
+    $("uicancel").style.display = "none";
+    $("uiok").textContent = "OK";
+    const done = () => { $("uidlg").close(); resolve(); };
+    $("uiok").onclick = done;
+    $("uidlg").onclose = () => resolve();
+    $("uidlg").showModal();
+  });
+}
+function uiConfirm(msg, title) {
+  return new Promise(resolve => {
+    $("uititle").textContent = title || "Confirmar";
+    $("uimsg").textContent = msg;
+    $("uiinput").style.display = "none";
+    $("uicancel").style.display = "";
+    $("uicancel").textContent = "Cancelar";
+    $("uiok").textContent = "Confirmar";
+    const finish = (v) => { $("uidlg").close(); resolve(v); };
+    $("uiok").onclick = () => finish(true);
+    $("uicancel").onclick = () => finish(false);
+    $("uidlg").onclose = () => resolve(false);
+    $("uidlg").showModal();
+  });
+}
+function uiPrompt(msg, def, title) {
+  return new Promise(resolve => {
+    $("uititle").textContent = title || "Introduzir";
+    $("uimsg").textContent = msg;
+    $("uiinput").style.display = "";
+    $("uiinput").value = def || "";
+    $("uicancel").style.display = "";
+    $("uicancel").textContent = "Cancelar";
+    $("uiok").textContent = "OK";
+    const finish = (v) => { $("uidlg").close(); resolve(v); };
+    $("uiok").onclick = () => finish($("uiinput").value);
+    $("uicancel").onclick = () => finish(null);
+    $("uidlg").onclose = () => resolve(null);
+    $("uidlg").showModal();
+    setTimeout(() => $("uiinput").focus(), 50);
+  });
+}
+
+
+let freeTableTarget = null;
+function openFreeTablePopup(t) {
+  freeTableTarget = t;
+  $("freetitle").textContent = "Mesa " + t.name;
+  $("freemsg").textContent = "Mesa livre · " + (t.seats ?? t.capacity ?? "?") + " lugares. Escolha uma ação:";
+  $("freetabledlg").showModal();
+}
+function assignTableAndOpenForm(walkin) {
+  const t = freeTableTarget;
+  if (!t) return;
+  $("freetabledlg").close();
+  clearform();
+  $("area").value = t.area;
+  chosen = new Set([t.name]);
+  selects();
+  chosen = new Set([t.name]);
+  $("tablechecks").querySelectorAll("input").forEach(cb => { cb.checked = chosen.has(cb.value); });
+  if (walkin) {
+    $("name").value = "Walk-in";
+    $("status").value = "arrived";
+    $("formtitle").textContent = "Walk-in (sem reserva)";
+    const now = new Date();
+    const tm = String(now.getHours()).padStart(2,"0") + ":" + String(now.getMinutes()).padStart(2,"0");
+    const sh = getShifts();
+    let shift = "jantar";
+    if (sh.almoco && sh.almoco.on && tm >= sh.almoco.open && tm <= sh.almoco.close) shift = "almoco";
+    else if (sh.jantar && sh.jantar.on && tm >= sh.jantar.open && tm <= sh.jantar.close) shift = "jantar";
+    fillShiftSelect();
+    $("shift").value = shift;
+    applyShiftToTimeInput();
+    if (timeInShift(tm, shift)) $("time").value = tm;
+  }
+  openFormDlg();
+  setTimeout(() => $(walkin ? "pax" : "name").focus(), 50);
+  renderFloor();
+}
+$("free_reserve").onclick = () => assignTableAndOpenForm(false);
+$("free_walkin").onclick = () => { const t = freeTableTarget; $("freetabledlg").close(); startWalkin(t); };
+$("free_block").onclick = () => {
+  const t = freeTableTarget;
+  if (!t) return;
+  t.blocked = true;
+  save();
+  $("freetabledlg").close();
+  render();
+};
+$("free_close").onclick = () => $("freetabledlg").close();
+
+let blockedTableTarget = null;
+function openBlockedTablePopup(t) {
+  blockedTableTarget = t;
+  $("blockedtitle").textContent = "Mesa " + t.name;
+  $("blockedmsg").textContent = "Esta mesa está bloqueada e não pode receber reservas até ser desbloqueada.";
+  $("blockeddlg").showModal();
+}
+$("blocked_unblock").onclick = () => {
+  if (blockedTableTarget) {
+    blockedTableTarget.blocked = false;
+    save();
+  }
+  $("blockeddlg").close();
+  render();
+};
+$("blocked_close").onclick = () => $("blockeddlg").close();
+
+function openFormDlg() {
+  const dlg = $("formdlg");
+  if (dlg && !dlg.open) dlg.showModal();
+}
+function closeFormDlg() {
+  const dlg = $("formdlg");
+  if (dlg && dlg.open) dlg.close();
+}
+
+function clearform() {
+  window.walkinMode = false; walkinMode = false;
+  if ($("shiftfield")) $("shiftfield").style.display = "";
+  $("form").reset();
+  currentClientKey = null;
+  $("id").value = "";
+  $("pax").value = 2;
+  $("status").value = "booked";
+  fillShiftSelect();
+  const prefer = viewShift !== "all" ? viewShift : (getShiftList().find(s => s.on !== false) || {id:"jantar"}).id;
+  if ([...$("shift").options].some(o => o.value === prefer)) $("shift").value = prefer;
+  applyShiftToTimeInput();
+  $("time").value = defaultTimeForShift($("shift").value);
+  $("formtitle").textContent = "Nova reserva";
+  $("cancel").style.display = "none";
+  chosen = new Set();
+  selects();
+  autoPickTable();
+  selects(); // refresh checks with auto pick
+  refreshClientBox(false);
+  renderFloor();
+}
+
+function edit(id) {
+  const b = db.bookings.find(x => x.id === id);
+  if (!b) return;
+  $("id").value = b.id;
+  $("name").value = b.name;
+  $("phone").value = b.phone || "";
+  $("pax").value = b.pax;
+  $("status").value = b.status || "confirmed";
+  fillShiftSelect();
+  $("shift").value = b.shift || ((b.time || "") < "17:00" ? "almoco" : "jantar");
+  applyShiftToTimeInput();
+  $("time").value = b.time;
+  $("area").value = b.area || areas()[0] || "";
+  chosen = new Set(tablesOf(b));
+  selects();
+  $("menu").value = b.menu || "";
+  $("notes").value = b.notes || "";
+  refreshClientBox(true);
+  $("formtitle").textContent = "Editar reserva";
+  $("cancel").style.display = "inline-block";
+  openFormDlg();
+}
+
+$("form").onsubmit = async e => {
+  e.preventDefault();
+  const id = $("id").value;
+  let selectedTables = [...chosen];
+  const time = $("time").value;
+  if (walkinMode) $("shift").value = shiftForTime(time);
+  const shift = $("shift").value;
+  if (!selectedTables.length) {
+    autoPickTable();
+    selectedTables = [...chosen];
+  }
+  if (!selectedTables.length) {
+    uiAlert("Não há mesas livres neste turno/sala. Escolha outra sala ou turno.");
+    return;
+  }
+  if (!walkinMode && !timeInShift(time, shift)) {
+    const sh = getShifts()[shift];
+    uiAlert("O horário deve estar entre " + sh.open + " e " + sh.close + " (" + shiftLabel(shift) + ").");
+    return;
+  }
+  const x = {
+    id: id || String(Date.now()),
+    date: $("day").value,
+    name: $("name").value.trim(),
+    phone: $("phone").value.trim(),
+    pax: +$("pax").value,
+    time: time,
+    shift: shift,
+    status: $("status").value || "confirmed",
+    area: $("area").value,
+    table: selectedTables,
+    menu: $("menu").value.trim(),
+    notes: $("notes").value.trim()
+  };
+  if (isActiveStatus(x.status) && x.area && roomBlockedFor(x.area, x.date, x.shift) &&
+      !(await uiConfirm("A sala " + x.area + " está bloqueada neste turno. Guardar mesmo assim?", "Sala bloqueada"))) return;
+  const conflict = isActiveStatus(x.status) && db.bookings.find(b =>
+    b.date === x.date && b.id !== id && (b.shift || "jantar") === x.shift && isActiveStatus(b.status || "confirmed") &&
+    tablesOf(b).some(t => selectedTables.includes(t))
+  );
+  if (conflict && !(await uiConfirm("Uma ou mais mesas já estão atribuídas a " + conflict.name + " às " + conflict.time + " (mesmo turno). Guardar mesmo assim?", "Conflito de mesa"))) return;
+  const cap = selectedTables.reduce((n, nm) => { const t = db.tables.find(z => z.name === nm); return n + (t ? seatsOf(t) : 0); }, 0);
+  if (cap > 0 && x.pax > cap && !(await uiConfirm(x.pax + " pessoas excedem os " + cap + " lugares das mesas escolhidas (mesas " + selectedTables.map(nomeMesa).join(", ") + "). Guardar mesmo assim?", "Capacidade excedida"))) return;
+
+  const old = id ? db.bookings.find(b => b.id === id) : null;
+  if (old) { if (old.arrivedAt) x.arrivedAt = old.arrivedAt; if (old.leftAt) x.leftAt = old.leftAt; }
+  const nowIso = new Date().toISOString();
+  if (["arrived", "seated", "left"].includes(x.status) && !x.arrivedAt) x.arrivedAt = nowIso;
+  if (x.status === "left" && !x.leftAt) x.leftAt = nowIso;
+  if (x.status !== "left") delete x.leftAt;
+  upsertClientFromForm(x);
+  if (id) db.bookings = db.bookings.map(b => b.id === id ? x : b);
+  else db.bookings.push(x);
+  save();
+  chosen = new Set(selectedTables);
+  clearform();
+  closeFormDlg();
+  render();
+};
+
+$("clear").onclick = () => { clearform(); };
+$("closeform").onclick = () => { clearform(); closeFormDlg(); };
+$("cancel").onclick = () => { clearform(); closeFormDlg(); };
+$("new").onclick = () => {
+  clearform();
+  openFormDlg();
+  setTimeout(() => $("name").focus(), 50);
+};
+function shiftForTime(tm) {
+  const list = getShiftList().filter(x => x.on !== false);
+  if (!list.length) return "jantar";
+  const inside = list.find(x => tm >= x.open && tm <= x.close);
+  if (inside) return inside.id;
+  const m = t => { const [h, mi] = (t || "0:0").split(":").map(Number); return h * 60 + mi; };
+  let best = list[0], bd = 1e9;
+  list.forEach(x => { const d = Math.min(Math.abs(m(tm) - m(x.open)), Math.abs(m(tm) - m(x.close))); if (d < bd) { bd = d; best = x; } });
+  return best.id;
+}
+var walkinMode = false;
+function startWalkin(table) {
+  try {
+    clearform();
+    walkinMode = true;
+    const now = new Date();
+    const tm = String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0");
+    const shift = shiftForTime(tm);
+    $("shift").value = shift;
+    const sh = getShifts()[shift] || {};
+    $("time").removeAttribute("min"); $("time").removeAttribute("max");
+    $("time").value = (tm >= sh.open && tm <= sh.close) ? tm : (tm < sh.open ? sh.open : sh.close);
+    $("timehint").textContent = "Turno automático: " + shiftLabel(shift);
+    $("shiftfield").style.display = "none";
+    $("name").value = "Walk-in";
+    $("status").value = "seated";
+    $("formtitle").textContent = "Walk-in (sem reserva)";
+    if (table) {
+      $("area").value = table.area;
+      chosen = new Set([table.name]);
+    } else {
+      chosen = new Set();
+      autoPickTable();
+      if (!chosen.size) {
+        const occ = occupiedTableNames(shift, null);
+        const cand = db.tables
+          .filter(t => !occ.has(t.name) && !t.blocked)
+          .sort((a, c) => (seatsOf(a) - (+$("pax").value || 0)) - (seatsOf(c) - (+$("pax").value || 0)));
+        if (cand.length) { chosen = new Set([cand[0].name]); $("area").value = cand[0].area; }
+      }
+    }
+    selects();
+    $("tablechecks").querySelectorAll("input").forEach(cb => { cb.checked = chosen.has(cb.value); });
+    openFormDlg();
+    setTimeout(() => $("pax").focus(), 50);
+    renderFloor();
+  } catch (err) {
+    console.error(err);
+    uiAlert("Erro ao abrir walk-in: " + err.message, "Walk-in");
+  }
+}
+$("walkin").onclick = () => startWalkin(null);
+$("time").addEventListener("change", () => {
+  if (!walkinMode) return;
+  const s2 = shiftForTime($("time").value);
+  $("shift").value = s2;
+  $("timehint").textContent = "Turno automático: " + shiftLabel(s2);
+});
+$("area").onchange = () => {
+  const ar = $("area").value;
+  const namesInArea = new Set(db.tables.filter(t => t.area === ar).map(t => t.name));
+  chosen = new Set([...chosen].filter(n => namesInArea.has(n)));
+  selects(); renderFloor();
+};
+let editSnapshot = null;
+
+function enterEditMap() {
+  editSnapshot = db.tables.map(t => ({
+    name: t.name, x: t.x, y: t.y, w: t.w, h: t.h, shape: t.shape, capacity: t.capacity, seats: t.seats, area: t.area
+  }));
+  editMap = true;
+  $("edithint").classList.add("on");
+  $("toggledrag").textContent = "✓ Confirmar alteração";
+  $("canceledit").style.display = "";
+  renderFloor();
+}
+function exitEditMap(confirm) {
+  if (!confirm && editSnapshot) {
+    // repor posições/formas a partir do snapshot
+    const byName = Object.fromEntries(editSnapshot.map(t => [t.name, t]));
+    db.tables.forEach(t => {
+      const s = byName[t.name];
+      if (!s) return;
+      t.x = s.x; t.y = s.y; t.w = s.w; t.h = s.h;
+      t.shape = s.shape; t.capacity = s.capacity;
+      if (s.seats != null) t.seats = s.seats;
+    });
+    // mesas apagadas/adicionadas no editor de mesa individual já gravadas — só repomos layout
+    save();
+  } else if (confirm) {
+    save();
+  }
+  editMap = false;
+  editSnapshot = null;
+  $("edithint").classList.remove("on");
+  $("toggledrag").textContent = "✎ Editar mapa";
+  $("canceledit").style.display = "none";
+  renderFloor();
+}
+$("toggledrag").onclick = () => {
+  if (!editMap) enterEditMap();
+  else exitEditMap(true); // Confirmar alteração
+};
+$("canceledit").onclick = async () => {
+  if (!editMap) return;
+  if (!(await uiConfirm("Cancelar alterações do mapa e repor as posições anteriores?", "Cancelar alteração"))) return;
+  exitEditMap(false);
+};
+
+$("day").value = new Date().toLocaleDateString("en-CA");
+function move(n) {
+  const d = new Date($("day").value + "T12:00:00");
+  d.setDate(d.getDate() + n);
+  $("day").value = d.toLocaleDateString("en-CA");
+  chosen = new Set(); clearform(); render();
+}
+$("prev").onclick = () => move(-1);
+$("next").onclick = () => move(1);
+$("today").onclick = () => { $("day").value = new Date().toLocaleDateString("en-CA"); clearform(); render(); };
+$("day").onchange = () => { clearform(); render(); };
+
+$("backup").onclick = () => {
+  const a = document.createElement("a");
+  const u = URL.createObjectURL(new Blob([JSON.stringify(db, null, 2)], {type:"application/json"}));
+  a.href = u; a.download = "backup-reservas.json"; a.click(); URL.revokeObjectURL(u);
+};
+$("restore").onclick = () => $("file").click();
+$("file").onchange = async e => {
+  try {
+    const x = JSON.parse(await e.target.files[0].text());
+    if (!Array.isArray(x.tables) || !Array.isArray(x.bookings)) throw 0;
+    if (await uiConfirm("Substituir os dados atuais pela cópia?", "Importar dados")) {
+      x.tables.forEach((t,i) => {
+        if (!t.shape) t.shape = "rect";
+        if (t.x == null) Object.assign(t, defaultPos(i));
+        if ((t.w||0) > 12) { t.w = Math.round((t.w/2)*10)/10; t.h = Math.round(((t.h||16)/2)*10)/10; }
+      });
+      x.bookings.forEach(b => {
+        if (typeof b.table === "string") b.table = b.table ? [b.table] : [];
+        if (!Array.isArray(b.table)) b.table = [];
+        if (!b.status) b.status = "booked";
+      });
+      if (!x.clients) x.clients = {};
+      if (!x.ui) x.ui = { rightW: 380, zoom: 1, restaurantName: "" };
+      if (x.ui.zoom == null) x.ui.zoom = 1;
+      if (x.ui.restaurantName == null) x.ui.restaurantName = "";
+      if (!x.ui.shifts) x.ui.shifts = {
+        almoco: { open: "12:00", close: "15:00", on: true },
+        jantar: { open: "19:00", close: "23:00", on: true }
+      };
+      updateRestaurantDisplay();
+      db = x; save(); zone = areas()[0] || ""; applySplit(); updateZoomLabel(); render(); clearform();
+    }
+  } catch(err) { uiAlert("Ficheiro inválido."); }
+  e.target.value = "";
+};
+
+
+$("shift").onchange = () => {
+  applyShiftToTimeInput();
+  chosen = new Set();
+  selects();
+  autoPickTable();
+  selects();
+  renderFloor();
+};
+if ($("pax")) $("pax").addEventListener("change", () => {
+  if ($("formdlg") && $("formdlg").open && !$("id").value) {
+    chosen = new Set();
+    autoPickTable();
+    selects();
+    renderFloor();
+  }
+});
+
+function timeToMin(t) {
+  if (!t || !t.includes(":")) return 0;
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + m;
+}
+function minToTime(mins) {
+  mins = Math.max(0, Math.min(24 * 60 - 1, mins));
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0");
+}
+function rangesOverlap(a0, a1, b0, b1) {
+  return timeToMin(a0) < timeToMin(b1) && timeToMin(b0) < timeToMin(a1);
+}
+/** Lê o formulário do editor para memória (sem gravar no localStorage ainda) */
+function collectShiftEditorForm() {
+  const rows = [...$("shifteditor").querySelectorAll(".shift-editor-row")];
+  const list = [];
+  rows.forEach((row, i) => {
+    const prev = (db.ui.shiftList || [])[i] || {};
+    list.push({
+      id: prev.id || row.dataset.id || ("turno_" + Date.now() + "_" + i),
+      name: (row.querySelector(".se-name").value || "").trim() || "Turno",
+      open: row.querySelector(".se-open").value || "12:00",
+      close: row.querySelector(".se-close").value || "15:00",
+      on: row.querySelector(".se-on").value === "1"
+    });
+  });
+  db.ui.shiftList = list;
+  // sync map
+  const map = {};
+  list.forEach(s => { map[s.id] = { open: s.open, close: s.close, on: s.on !== false, name: s.name }; });
+  db.ui.shifts = map;
+  return list;
+}
+function getDayHoursFromForm() {
+  const open = ($("day_open") && $("day_open").value) || db.ui.dayOpen || "12:00";
+  const close = ($("day_close") && $("day_close").value) || db.ui.dayClose || "23:00";
+  return { open, close };
+}
+function findFreeSlot(list, dayOpen, dayClose, durationMin) {
+  durationMin = durationMin || 90;
+  const day0 = timeToMin(dayOpen);
+  const day1 = timeToMin(dayClose);
+  if (day1 - day0 < durationMin) return null;
+  const sorted = [...list].sort((a, b) => timeToMin(a.open) - timeToMin(b.open));
+  // try from day open
+  let cursor = day0;
+  for (const s of sorted) {
+    const s0 = timeToMin(s.open);
+    const s1 = timeToMin(s.close);
+    if (s0 - cursor >= durationMin) {
+      return { open: minToTime(cursor), close: minToTime(cursor + durationMin) };
+    }
+    cursor = Math.max(cursor, s1);
+  }
+  if (day1 - cursor >= durationMin) {
+    return { open: minToTime(cursor), close: minToTime(Math.min(day1, cursor + durationMin)) };
+  }
+  // try smaller duration
+  if (day1 - cursor >= 30) {
+    return { open: minToTime(cursor), close: minToTime(day1) };
+  }
+  return null;
+}
+function updateShiftGapsHint() {
+  const list = db.ui.shiftList || [];
+  const { open: dayOpen, close: dayClose } = getDayHoursFromForm();
+  const free = findFreeSlot(list, dayOpen, dayClose, 60);
+  const el = $("shiftgapshint");
+  if (!el) return;
+  if (free) {
+    el.textContent = "Faixa livre disponível: " + free.open + " – " + free.close + " (dentro de " + dayOpen + " – " + dayClose + ").";
+  } else {
+    el.textContent = "Não há faixa livre dentro do horário do restaurante. Ajuste ou apague um turno.";
+  }
+}
+function renderShiftEditor() {
+  const list = Array.isArray(db.ui.shiftList) ? db.ui.shiftList : getShiftList();
+  const { open: dayOpen, close: dayClose } = getDayHoursFromForm();
+  $("shifteditor").innerHTML = list.map((s, i) => `
+    <div class="shift-editor-row" data-i="${i}" data-id="${esc(s.id)}">
+      <input class="se-name" value="${esc(s.name)}" placeholder="Nome do turno">
+      <input class="se-open" type="time" value="${esc(s.open)}" min="${esc(dayOpen)}" max="${esc(dayClose)}">
+      <input class="se-close" type="time" value="${esc(s.close)}" min="${esc(dayOpen)}" max="${esc(dayClose)}">
+      <select class="se-on"><option value="1" ${s.on !== false ? "selected" : ""}>Sim</option><option value="0" ${s.on === false ? "selected" : ""}>Não</option></select>
+      <button type="button" class="sm danger se-del" title="Apagar turno">×</button>
+    </div>`).join("") || '<p class="muted">Nenhum turno. Adicione um.</p>';
+  $("shifteditor").querySelectorAll(".se-del").forEach(btn => {
+    btn.onclick = () => {
+      collectShiftEditorForm();
+      const row = btn.closest(".shift-editor-row");
+      const i = +row.dataset.i;
+      if ((db.ui.shiftList || []).length <= 1) { uiAlert("É preciso manter pelo menos um turno."); return; }
+      db.ui.shiftList.splice(i, 1);
+      renderShiftEditor();
+    };
+  });
+  // ao alterar horas, atualizar dica de faixas livres (sem regravar tudo a cada tecla de nome)
+  $("shifteditor").querySelectorAll(".se-open, .se-close").forEach(inp => {
+    inp.onchange = () => { collectShiftEditorForm(); updateShiftGapsHint(); };
+  });
+  updateShiftGapsHint();
+}
+$("edithours").onclick = () => {
+  ensureShiftList();
+  $("day_open").value = db.ui.dayOpen || "12:00";
+  $("day_close").value = db.ui.dayClose || "23:00";
+  renderShiftEditor();
+  $("hoursdlg").showModal();
+};
+$("day_open").onchange = $("day_close").onchange = () => {
+  collectShiftEditorForm();
+  updateShiftGapsHint();
+  // atualizar min/max dos inputs de turno
+  const { open, close } = getDayHoursFromForm();
+  $("shifteditor").querySelectorAll(".se-open, .se-close").forEach(inp => {
+    inp.min = open; inp.max = close;
+  });
+};
+$("closehours").onclick = () => $("hoursdlg").close();
+$("addshift").onclick = () => {
+  // IMPORTANTE: preservar o que está escrito no formulário
+  const list = collectShiftEditorForm();
+  const { open: dayOpen, close: dayClose } = getDayHoursFromForm();
+  if (timeToMin(dayOpen) >= timeToMin(dayClose)) {
+    uiAlert("Defina primeiro a abertura e o fecho do restaurante (abertura antes do fecho).");
+    return;
+  }
+  const slot = findFreeSlot(list, dayOpen, dayClose, 90);
+  if (!slot) {
+    uiAlert("Não há horário livre dentro da abertura e fecho do restaurante. Os turnos não podem sobrepor-se. Ajuste os turnos existentes ou alargue o horário geral.");
+    return;
+  }
+  const id = "turno_" + Date.now();
+  list.push({ id, name: "Novo turno", open: slot.open, close: slot.close, on: true });
+  db.ui.shiftList = list;
+  renderShiftEditor();
+};
+$("savehours").onclick = () => {
+  const dayOpen = $("day_open").value;
+  const dayClose = $("day_close").value;
+  if (!dayOpen || !dayClose || timeToMin(dayOpen) >= timeToMin(dayClose)) {
+    uiAlert("Horário do restaurante inválido: a abertura deve ser antes do fecho.");
+    return;
+  }
+  const list = collectShiftEditorForm();
+  if (!list.length) { uiAlert("Adicione pelo menos um turno."); return; }
+  for (let i = 0; i < list.length; i++) {
+    const s = list[i];
+    if (timeToMin(s.open) >= timeToMin(s.close)) {
+      uiAlert(`"${s.name}": o início deve ser antes do fim.`);
+      return;
+    }
+    if (timeToMin(s.open) < timeToMin(dayOpen) || timeToMin(s.close) > timeToMin(dayClose)) {
+      uiAlert(`"${s.name}" tem de estar dentro do horário do restaurante (${dayOpen} – ${dayClose}).`);
+      return;
+    }
+    for (let j = 0; j < i; j++) {
+      const o = list[j];
+      if (rangesOverlap(s.open, s.close, o.open, o.close)) {
+        uiAlert(`"${s.name}" (${s.open}–${s.close}) sobrepõe-se a "${o.name}" (${o.open}–${o.close}). Escolha uma faixa livre.`);
+        return;
+      }
+    }
+  }
+  db.ui.dayOpen = dayOpen;
+  db.ui.dayClose = dayClose;
+  db.ui.shiftList = list;
+  ensureShiftList();
+  save();
+  $("hoursdlg").close();
+  rebuildShiftTabs();
+  fillShiftSelect();
+  updateShiftTabs();
+  render();
+};
+function rebuildShiftTabs() {
+  const list = getShiftList().filter(s => s.on !== false);
+  $("shifttabs").innerHTML = `<button type="button" data-shift="all">Todos</button>` +
+    list.map(s => `<button type="button" data-shift="${esc(s.id)}">${esc(s.name)}</button>`).join("");
+  $("shifttabs").querySelectorAll("button").forEach(btn => {
+    btn.onclick = () => {
+      viewShift = btn.dataset.shift;
+      updateShiftTabs();
+      render();
+    };
+  });
+  if (viewShift !== "all" && !list.some(s => s.id === viewShift)) viewShift = "all";
+}
+
+function updateStatusTabs() {
+  const day = $("day") ? $("day").value : "";
+  const all = allBookingsDay();
+  $("statustabs").querySelectorAll("button").forEach(btn => {
+    const st = btn.dataset.status;
+    const bs = all.filter(b => (b.status || "confirmed") === st);
+    const pax = bs.reduce((n, b) => n + (+b.pax || 0), 0);
+    btn.innerHTML = `<span class="ic">${btn.querySelector(".ic") ? btn.querySelector(".ic").textContent : ""}</span> ` +
+      esc(btn.dataset.label) + ` <span class="pax">(${pax}pax)</span>`;
+    btn.classList.toggle("active", viewStatuses.has(st));
+    const shTxt = viewShift === "all" ? "" : " · " + shiftLabel(viewShift);
+    btn.title = btn.dataset.label + " · " + day + shTxt;
+  });
+}
+
+function updateShiftTabs() {
+  const list = getShiftList();
+  const day = $("day") ? $("day").value : "";
+  const dayActive = db.bookings.filter(b => b.date === day && isActiveStatus(b.status || "confirmed"));
+  const paxAll = dayActive.reduce((s, b) => s + (+b.pax || 0), 0);
+  $("shifttabs").querySelectorAll("button").forEach(btn => {
+    const s = btn.dataset.shift;
+    btn.classList.toggle("active", s === viewShift);
+    if (s === "all") {
+      btn.innerHTML = 'Todos <span class="pax">(' + paxAll + 'pax)</span>';
+      return;
+    }
+    const sh = list.find(x => x.id === s);
+    if (!sh) return;
+    const pax = dayActive.filter(b => (b.shift || "jantar") === s).reduce((sum, b) => sum + (+b.pax || 0), 0);
+    btn.innerHTML = esc(sh.name) + ' <span class="muted">' + sh.open + '–' + sh.close + '</span> <span class="pax">(' + pax + 'pax)</span>';
+  });
+}
+if (typeof rebuildShiftTabs === "function") rebuildShiftTabs();
+$("shifttabs").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    viewShift = btn.dataset.shift;
+    updateShiftTabs();
+    render();
+  };
+});
+
+$("statustabs").querySelectorAll("button").forEach(btn => {
+  btn.onclick = () => {
+    const st = btn.dataset.status;
+    if (viewStatuses.has(st)) viewStatuses.delete(st);
+    else viewStatuses.add(st);
+    btn.classList.toggle("active", viewStatuses.has(st));
+    render();
+  };
+});
+
+
+
+let _ct = null;
+["name", "phone"].forEach(k => $(k).addEventListener("input", () => { clearTimeout(_ct); _ct = setTimeout(() => refreshClientBox(false), 200); }));
+$("pax").addEventListener("input", updateCapWarn);
+$("search").addEventListener("input", renderSearch);
+$("search").addEventListener("focus", renderSearch);
+$("search").addEventListener("keydown", e => { if (e.key === "Escape") { $("search").value = ""; $("searchres").hidden = true; } });
+document.addEventListener("click", e => { if (!e.target.closest(".searchbox")) $("searchres").hidden = true; });
+let _lateSig = "";
+setInterval(() => {
+  const sig = db.bookings.map(b => { const l = lateInfo(b); return l ? b.id + l.kind + l.mins : ""; }).join("");
+  if (sig !== _lateSig) { _lateSig = sig; if (!editMap && !dragState) render(); }
+}, 15000);
+updateShiftTabs();
+fillShiftSelect();
+render();
+clearform();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
+<script>
+// ===== Bloquear sala =====
+$("blockroom").onclick = () => {
+  const day = $("day").value;
+  const r = roomBlockOf(zone, day) || {};
+  $("rbtitle").textContent = "Bloquear sala: " + zone;
+  $("rbinfo").textContent = "Dia " + new Date(day + "T12:00:00").toLocaleDateString("pt-PT") + ". Escolha um ou mais turnos ou o dia todo.";
+  $("rb_all").checked = !!r.allDay;
+  $("rb_shifts").innerHTML = getShiftList().filter(s => s.on !== false).map(s =>
+    `<label><input type="checkbox" class="rb-sh" value="${esc(s.id)}" ${(r.shifts||[]).includes(s.id)?"checked":""}> ${esc(s.name)} <span class="muted">${s.open}–${s.close}</span></label>`).join("");
+  const sync = () => $("rb_shifts").querySelectorAll(".rb-sh").forEach(c => c.disabled = $("rb_all").checked);
+  $("rb_all").onchange = sync; sync();
+  $("roomblockdlg").showModal();
+};
+function setRoomBlock(allDay, shifts) {
+  const day = $("day").value;
+  db.roomBlocks = (db.roomBlocks || []).filter(r => !(r.area === zone && r.date === day));
+  if (allDay || shifts.length) db.roomBlocks.push({ area: zone, date: day, allDay, shifts });
+  save(); render();
+}
+$("rb_save").onclick = () => {
+  const shifts = [...$("rb_shifts").querySelectorAll(".rb-sh:checked")].map(c => c.value);
+  setRoomBlock($("rb_all").checked, $("rb_all").checked ? [] : shifts);
+  $("roomblockdlg").close();
+};
+$("rb_clear").onclick = () => { setRoomBlock(false, []); $("roomblockdlg").close(); };
+$("rb_close").onclick = () => $("roomblockdlg").close();
+
+// ===== Perfis: Admin / Usuário =====
+const PIN_KEY = "salamap_admin_pin";
+const RESET_CODE = "0000";
+function adminPin() { return localStorage.getItem(PIN_KEY) || "1234"; }
+function applyRole(role) {
+  document.body.classList.toggle("role-user", role !== "admin");
+  document.body.classList.toggle("role-admin", role === "admin");
+  $("userrole").value = role;
+  sessionStorage.setItem("salamap_role", role);
+  if (role !== "admin") {
+    if (typeof editMap !== "undefined" && editMap && typeof exitEditMap === "function") exitEditMap(false);
+    ["dlg", "hoursdlg", "tblinfo"].forEach(id => { const d = $(id); if (d && d.open) d.close(); });
+  }
+}
+function openPinDlg() {
+  $("pinin").value = ""; $("pinerr").textContent = "";
+  $("pindlg").showModal();
+  setTimeout(() => $("pinin").focus(), 50);
+}
+function checkPin() {
+  if ($("pinin").value === adminPin()) { $("pindlg").close(); applyRole("admin"); }
+  else { $("pinerr").textContent = "PIN incorreto."; $("pinin").value = ""; $("pinin").focus(); }
+}
+$("pinok").onclick = checkPin;
+$("pinin").onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); checkPin(); } };
+$("pincancel").onclick = () => $("pindlg").close();
+$("pindlg").addEventListener("close", () => {
+  if (!document.body.classList.contains("role-admin")) $("userrole").value = "user";
+});
+let npMode = "change"; // change | reset
+function openNewPin(mode) {
+  npMode = mode;
+  ["np_old", "np_new", "np_new2"].forEach(i => $(i).value = "");
+  $("np_err").textContent = "";
+  $("np_title").textContent = mode === "reset" ? "Esqueceu o PIN" : "Alterar PIN";
+  $("np_oldlabel").textContent = mode === "reset" ? "Código de recuperação:" : "PIN atual:";
+  $("newpindlg").showModal();
+  setTimeout(() => $("np_old").focus(), 50);
+}
+$("np_ok").onclick = () => {
+  const o = $("np_old").value, n = $("np_new").value, n2 = $("np_new2").value;
+  if (npMode === "reset" ? o !== RESET_CODE : o !== adminPin()) { $("np_err").textContent = npMode === "reset" ? "Código de recuperação incorreto." : "PIN atual incorreto."; return; }
+  if (!/^\d{4}$/.test(n)) { $("np_err").textContent = "O novo PIN deve ter exatamente 4 dígitos."; return; }
+  if (n === RESET_CODE) { $("np_err").textContent = "O PIN não pode ser 0000."; return; }
+  if (n !== n2) { $("np_err").textContent = "Os PINs não coincidem."; return; }
+  localStorage.setItem(PIN_KEY, n);
+  $("newpindlg").close();
+  uiAlert("PIN alterado com sucesso.", "PIN");
+};
+$("np_cancel").onclick = () => $("newpindlg").close();
+$("changepin").onclick = () => { $("headermenu").classList.remove("open"); openNewPin("change"); };
+$("pinforgot").onclick = e => { e.preventDefault(); $("pindlg").close(); openNewPin("reset"); };
+$("userrole").onchange = () => {
+  if ($("userrole").value === "admin") openPinDlg();
+  else applyRole("user");
+};
+// Proteção extra: bloquear ações admin mesmo que o botão seja forçado
+["config", "toggledrag", "edithours", "backup", "restore", "editrestname"].forEach(id => {
+  const el = $(id); if (!el) return;
+  el.addEventListener("click", e => {
+    if (!document.body.classList.contains("role-admin")) { e.stopImmediatePropagation(); e.preventDefault(); }
+  }, true);
+});
+applyRole(sessionStorage.getItem("salamap_role") === "admin" ? "admin" : "user");
+</script>
+<script>
+function statRowHtml(b) {
+  const t = tablesOf(b).length ? tablesOf(b).map(tableTag).join(" ") : "sem mesa";
+  return `<div class="row"><span>${esc(b.time)}</span><span><b>${esc(b.name)}</b> · ${b.pax} pax · ${esc(shiftLabel(b.shift || "jantar"))} · ${esc(b.area || "")} · ${t}</span><span>${esc(statusLabel(b.status || "confirmed"))}</span></div>`;
+}
+function openStatList(kind) {
+  const day = $("day").value;
+  const all = allBookingsDay();
+  const titles = { book: "Reservas efetuadas", cancel: "Canceladas / Não compareceu", late: "Atrasos" };
+  let list = [], extra = "";
+  if (kind === "book") list = all.filter(b => isActiveStatus(b.status || "confirmed"));
+  if (kind === "cancel") list = all.filter(isCancelBooking);
+  if (kind === "late") {
+    list = all.filter(b => lateInfo(b));
+    extra = "Atraso: " + LATE_MIN + " minutos ou mais após a hora marcada.";
+  }
+  list = list.slice().sort((a, b) => (a.time || "").localeCompare(b.time || ""));
+  $("sd_title").textContent = titles[kind] + " · " + new Date(day + "T12:00:00").toLocaleDateString("pt-PT");
+  const pax = list.reduce((n, b) => n + (+b.pax || 0), 0);
+  $("sd_body").innerHTML =
+    `<p class="muted">${list.length} reserva(s) · ${pax} pax${extra ? " · " + extra : ""}</p>` +
+    (list.length ? list.map(statRowHtml).join("") : '<div class="empty">Nada para mostrar.</div>');
+  $("statdlg").showModal();
+}
+$("statbook").onclick = () => openStatList("book");
+$("statcancel").onclick = () => openStatList("cancel");
+$("statlate").onclick = () => openStatList("late");
+$("sd_close").onclick = () => $("statdlg").close();
+</script>
+<script>
+// ===== PWA / offline =====
+function updateNetBar() {
+  const bar = $("netbar");
+  if (!bar) return;
+  if (navigator.onLine) {
+    bar.textContent = "";
+    bar.classList.remove("restored");
+    document.body.classList.remove("offline");
+  } else {
+    bar.textContent = "Sem ligação — os dados continuam a ser guardados neste tablet e sincronizam quando a rede voltar.";
+    bar.classList.remove("restored");
+    document.body.classList.add("offline");
+  }
+}
+window.addEventListener("online", updateNetBar);
+window.addEventListener("offline", updateNetBar);
+updateNetBar();
+
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").then(reg => {
+      reg.addEventListener("updatefound", () => {
+        const bar = $("netbar");
+        if (bar) { bar.textContent = "A preparar nova versão…"; bar.classList.add("restored"); document.body.classList.add("offline"); }
+      });
+    }).catch(err => console.warn("Service worker não registado:", err));
+  });
+}
+</script>
+</body>
