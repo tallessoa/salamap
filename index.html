@@ -110,18 +110,55 @@ input,select,textarea{padding:7px;border:1px solid #ccd3da;border-radius:7px;bac
   border-radius:2px;background:#c5ced6;
 }
 .split-handle:hover::after,.split-handle.dragging::after{background:#415d75}
-/* área de toque maior em tablets */
 @media (pointer: coarse) {
   .split-handle{width:24px;flex:0 0 24px}
   .split-handle::after{left:10px;width:5px}
 }
+/* Mobile: empilha e usa handle horizontal para redimensionar alturas */
+.split.is-vertical{
+  flex-direction:column;
+  min-height:0;
+}
+.split.is-vertical .split-left,
+.split.is-vertical .split-right{
+  flex:0 0 auto;
+  min-width:0;
+  width:100%!important;
+  overflow:hidden;
+}
+.split.is-vertical .split-handle{
+  display:flex!important;
+  width:100%!important;
+  flex:0 0 28px!important;
+  height:28px;
+  cursor:row-resize;
+  align-items:center;
+  justify-content:center;
+  background:#eef1f4;
+  border-top:1px solid #dce1e6;
+  border-bottom:1px solid #dce1e6;
+}
+.split.is-vertical .split-handle::after{
+  position:static;
+  width:48px;height:5px;left:auto;top:auto;bottom:auto;
+  border-radius:3px;background:#94a3b8;
+}
+.split.is-vertical .split-handle.dragging::after,
+.split.is-vertical .split-handle:hover::after{background:#415d75}
+.split.is-vertical .split-left .panel,
+.split.is-vertical .split-right .panel{height:100%;margin-bottom:0}
+.split.is-vertical .floor-wrap{height:100%;min-height:180px}
 .panel{background:white;border:1px solid #dce1e6;border-radius:10px;padding:12px;margin-bottom:12px;height:100%}
 .panel h2{font-size:15px;margin:0 0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .tabs button.active{background:#263746;color:white}
 .floor-wrap{
-  position:relative;min-height:400px;height:min(62vh, 560px);
+  position:relative;min-height:220px;height:min(62vh, 560px);
   border:1px dashed #b9c2cc;border-radius:8px;background:#fafbfc;
   overflow:auto;touch-action:none;
+}
+.split.is-vertical .floor-wrap{
+  height:calc(100% - 90px);
+  min-height:140px;
 }
 .floor{position:relative;width:100%;min-height:100%;height:100%;transform-origin:0 0}
 /* Tamanhos em % do floor — o zoom escala o floor inteiro (layout + mesas juntos) */
@@ -255,11 +292,7 @@ dialog::backdrop{background:#0008}
 .shift-tabs button .muted{color:#6b7280;opacity:1;font-size:11px}
 .hours-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;align-items:end}
 @media(max-width:480px){.hours-row{grid-template-columns:1fr}}
-@media(max-width:820px){
-  .split{flex-direction:column}
-  .split-handle{display:none}
-  .split-right{width:100%!important}
-}
+/* layout vertical controlado por JS (.is-vertical); não esconder o handle */
 @media(max-width:900px){
   .formgrid{grid-template-columns:1fr 1fr}
   #tablechecks{max-height:160px;overflow:auto}
@@ -430,7 +463,7 @@ body.offline .netbar.restored{background:#14532d}
         </div>
       </section>
     </div>
-    <div class="split-handle" id="splithandle" title="Arrastar para redimensionar"></div>
+    <div class="split-handle" id="splithandle" title="Arrastar para redimensionar o mapa e a lista"></div>
     <div class="split-right" id="splitright">
       <section class="panel">
         <h2>Horário do dia</h2>
@@ -438,6 +471,7 @@ body.offline .netbar.restored{background:#14532d}
           <button type="button" data-filter="ativas" class="active" data-label="Todas ativas" title="Reservas ativas (sem canceladas nem saídas)"><span class="ic">●</span> Todas ativas</button>
           <button type="button" data-filter="servico" data-label="Em serviço" title="Chegou + Sentados"><span class="ic">◉</span> Em serviço</button>
           <button type="button" data-filter="proximas" data-label="Próximas" title="Reservado + Confirmadas"><span class="ic">◷</span> Próximas</button>
+          <button type="button" data-filter="saiu" data-label="Saiu" title="Já saíram"><span class="ic">←</span> Saiu</button>
           <button type="button" data-filter="canceladas" data-label="Canceladas" title="Canceladas + Não compareceu"><span class="ic">✕</span> Canceladas</button>
           <button type="button" data-filter="todas" data-label="Todas as reservas" title="Todas as reservas do dia"><span class="ic">≡</span> Todas as reservas</button>
         </div>
@@ -972,6 +1006,7 @@ function jumpToBooking(id) {
   $("day").value = b.date; viewShift = "all";
   const st = b.status || "confirmed";
   if (st === "cancelled" || st === "noshow") viewFilter = "canceladas";
+  else if (st === "left") viewFilter = "saiu";
   else if (st === "arrived" || st === "seated") viewFilter = "servico";
   else if (st === "booked" || st === "confirmed") viewFilter = "proximas";
   else viewFilter = "ativas";
@@ -1101,7 +1136,7 @@ function getZoom() {
   return Math.max(0.5, Math.min(3, db.ui.zoom || 1));
 }
 let viewShift = "all"; // all | almoco | jantar
-let viewFilter = "ativas"; // ativas | servico | proximas | canceladas | todas
+let viewFilter = "ativas"; // ativas | servico | proximas | saiu | canceladas | todas
 
 function filterByStatus(list) {
   return list.filter(b => {
@@ -1110,6 +1145,7 @@ function filterByStatus(list) {
     if (viewFilter === "ativas") return st !== "cancelled" && st !== "left" && st !== "noshow";
     if (viewFilter === "servico") return st === "arrived" || st === "seated";
     if (viewFilter === "proximas") return st === "booked" || st === "confirmed";
+    if (viewFilter === "saiu") return st === "left";
     if (viewFilter === "canceladas") return st === "cancelled" || st === "noshow";
     return true;
   });
@@ -1170,20 +1206,46 @@ function fillShiftSelect() {
 }
 
 
-/* —— Split resize (não altera tamanho das mesas) —— */
+/* —— Split resize (horizontal desktop / vertical mobile) —— */
+function isVerticalSplit() {
+  return window.matchMedia("(max-width:820px)").matches;
+}
 function applySplit(reset) {
-  const r = $("splitright"), l = $("splitleft");
-  if (!r || !l) return;
-  // em ecrãs estreitos empilha a 100%
-  if (window.matchMedia("(max-width:820px)").matches) { r.style.width = ""; return; }
-  if (reset) {
-    const total = l.getBoundingClientRect().width + r.getBoundingClientRect().width;
-    db.ui.rightW = Math.round(total / 2);
-    save();
+  const split = $("split"), r = $("splitright"), l = $("splitleft");
+  if (!split || !r || !l) return;
+  const vertical = isVerticalSplit();
+  split.classList.toggle("is-vertical", vertical);
+
+  if (vertical) {
+    // altura do mapa (painel esquerdo) em px; lista fica com o resto
+    r.style.width = "";
+    if (db.ui.leftH == null) db.ui.leftH = Math.round(Math.min(window.innerHeight * 0.42, 420));
+    if (reset) {
+      db.ui.leftH = Math.round(Math.min(window.innerHeight * 0.42, 420));
+      save();
+    }
+    const minH = 160, maxH = Math.max(minH, window.innerHeight - 220);
+    const h = Math.max(minH, Math.min(maxH, db.ui.leftH || 320));
+    l.style.height = h + "px";
+    l.style.flex = "0 0 auto";
+    r.style.height = "";
+    r.style.flex = "1 1 auto";
+    r.style.minHeight = "180px";
+  } else {
+    l.style.height = "";
+    l.style.flex = "";
+    r.style.height = "";
+    r.style.flex = "";
+    r.style.minHeight = "";
+    if (reset) {
+      const total = l.getBoundingClientRect().width + r.getBoundingClientRect().width;
+      db.ui.rightW = Math.round(total / 2);
+      save();
+    }
+    const w = db.ui.rightW || Math.round(window.innerWidth / 2);
+    r.style.width = w + "px";
+    document.documentElement.style.setProperty("--right-w", w + "px");
   }
-  const w = db.ui.rightW || Math.round(window.innerWidth / 2);
-  r.style.width = w + "px";
-  document.documentElement.style.setProperty("--right-w", w + "px");
 }
 applySplit(false);
 window.addEventListener("resize", () => applySplit(false));
@@ -1229,7 +1291,6 @@ document.addEventListener("click", (e) => {
 
 
 $("splithandle").addEventListener("pointerdown", e => {
-  // Aceitar mouse esquerdo e touch/pen
   if (e.pointerType === "mouse" && e.button !== 0) return;
   e.preventDefault();
   e.stopPropagation();
@@ -1242,12 +1303,19 @@ document.addEventListener("pointermove", e => {
   e.preventDefault();
   const split = $("split");
   const rect = split.getBoundingClientRect();
-  const fromRight = rect.right - e.clientX;
-  const minR = 140, maxR = Math.max(minR, rect.width - 160);
-  const w = Math.max(minR, Math.min(maxR, fromRight));
-  db.ui.rightW = Math.round(w);
-  applySplit();
-});
+  if (isVerticalSplit()) {
+    // Arrastar na vertical: define altura do painel do mapa
+    const fromTop = e.clientY - rect.top;
+    const minH = 160, maxH = Math.max(minH, rect.height - 180);
+    db.ui.leftH = Math.round(Math.max(minH, Math.min(maxH, fromTop)));
+    applySplit();
+  } else {
+    const fromRight = rect.right - e.clientX;
+    const minR = 140, maxR = Math.max(minR, rect.width - 160);
+    db.ui.rightW = Math.round(Math.max(minR, Math.min(maxR, fromRight)));
+    applySplit();
+  }
+}, { passive: false });
 document.addEventListener("pointerup", e => {
   if (!splitDragging) return;
   splitDragging = false;
